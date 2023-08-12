@@ -10,3 +10,13 @@ end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
+
+-- Turn off virtual text for diagnostics, but keep for anything more important
+vim.diagnostic.config({
+  underline = {
+    severity = { max = vim.diagnostic.severity.INFO }
+  },
+  virtual_text = {
+    severity = { min = vim.diagnostic.severity.WARN }
+  }
+})
