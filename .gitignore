@@ -5,4 +5,5 @@
 !nvim/**
 !tmux/**
 tmux/plugins/
+nvim/plugin/
 
