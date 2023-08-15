@@ -6,4 +6,4 @@
 !tmux/**
 tmux/plugins/
 nvim/plugin/
-
+!bashrc
