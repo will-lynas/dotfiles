@@ -15,14 +15,22 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 --Pasting over highlighted area preserves buffer
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>gp", [["_dP]])
+--Delete without overwriting buffer
+vim.keymap.set({"n", "v"}, "<leader>gd", [["_d]])
+
+--Note - when you perform actions on the system clipboard, the results also get
+--stored in the normal buffers, overwriting them
 
 --Yank to system clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-
---Delete without overwriting buffer
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+--Paste from system clipboard
+vim.keymap.set({"n", "v"}, "<leader>pp", [["+p]])
+vim.keymap.set("n", "<leader>PP", [["+P]])
+--Delete to system clipboard
+vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
+vim.keymap.set("n", "<leader>D", [["+D]])
 
 --Make current file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
