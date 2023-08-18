@@ -1,10 +1,2 @@
-*
-!*/
-
-!.gitignore
-!nvim/**
-!tmux/**
 tmux/plugins/
 nvim/plugin/
-!bashrc
-!pylintrc
