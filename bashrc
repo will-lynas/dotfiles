@@ -117,4 +117,8 @@ if ! shopt -oq posix; then
 fi
 
 
+export TERM=xterm-256color
+
 alias vim=nvim
+
+[ -f "/home/terry/.ghcup/env" ] && source "/home/terry/.ghcup/env" # ghcup-env
