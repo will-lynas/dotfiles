@@ -1,10 +1,5 @@
 mkdir -p ~/.config
 
-# Bashrc
-mv ~/.bashrc ~/.bashrc.old
-ln -s $PWD/bashrc ~/.bashrc
-source ~/.bashrc
-
 # Node
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -31,3 +26,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Gitconfig
 rm -rf ~/.gitconfig
 ln -s $PWD/gitconfig ~/.gitconfig
+
+# Bashrc
+mv ~/.bashrc ~/.bashrc.old
+ln -s $PWD/bashrc ~/.bashrc
+source ~/.bashrc
