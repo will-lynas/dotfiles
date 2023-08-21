@@ -122,3 +122,5 @@ export TERM=tmux-256color
 alias vim=nvim
 
 [ -f "~/.ghcup/env" ] && source "~/.ghcup/env" # ghcup-env
+
+source ~/.dotfiles/prompt.sh
