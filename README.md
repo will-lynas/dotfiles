@@ -9,4 +9,3 @@ Run `source install.sh`
 
 # TODO
 - GNU `stow` instead of manually symlinking
-- Git bash prompt
