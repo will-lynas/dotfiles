@@ -5,12 +5,12 @@ This repo should be cloned to `~/.dotfiles`\
 Run `source install.sh`
 
 ## Nvim
-Navigate to `nvim/lua/lynasw/packer.lua`\
-`:so`\
-`:PackerSync`
+`:PackerSync`\
+This is currently very broken
 
 ## Tmux
 `<prefix>I` to install plugins
 
 # TODO
-- Automate packer
+- Fix packer automation
+- GNU `stow` instead of manually symlinking

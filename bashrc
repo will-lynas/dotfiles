@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 
-export TERM=xterm-256color
+export TERM=tmux-256color
 
 alias vim=nvim
 
