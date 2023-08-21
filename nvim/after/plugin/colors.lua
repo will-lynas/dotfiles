@@ -1,6 +1,2 @@
-function FixColors(color)
-	color = color or "rose-pine"
-	vim.cmd.colorscheme(color)
-end
-
-FixColors()
+local color = "rose-pine"
+vim.cmd.colorscheme(color)
