@@ -5,7 +5,7 @@ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Nvim
-sudo apt install -y libfuse2 gcc
+sudo apt install -y libfuse2 gcc ripgrep
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
 sudo mv nvim.appimage /bin/nvim
