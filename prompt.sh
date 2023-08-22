@@ -18,6 +18,6 @@ export GIT_PS1_SHOWCOLORHINTS=1
 
 export PS1=\
 "\n\[${BG_GREEN}\] \[${FG_RED}\] \[${FG_BLACK}\]\u \[${FG_GREEN}${BG_BLUE}\] "\
-"\[${FG_BLACK}\]\w \[${FMT_RESET}${FG_BLUE}\]"\
+"\[${FG_WHITE}\]\w \[${FMT_RESET}${FG_BLUE}\]"\
 '$(__git_ps1 "\[${BG_MAGENTA}\] \[${FG_WHITE}\] %s \[${FMT_RESET}${FG_MAGENTA}\]")'\
 "\n \[${FG_GREEN}\]╰ \[${FG_CYAN}\]\$ \[${FMT_RESET}\]"
