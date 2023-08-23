@@ -5,4 +5,4 @@ tmux -f /dev/null -L temp start-server \; list-keys | \
   -e "s/bind-key(\s+)([\'])(\s+)/bind-key\1\"\2\"\3/g" \
   -e "s/bind-key(\s+)([;])(\s+)/bind-key\1\\\\\2\3/g" \
   -e "s/command-prompt -I #([SW])/command-prompt -I \"#\1\"/g" \
-  > ~/.config/tmux/tmux.reset.conf
+  > ./tmux_reset.conf
