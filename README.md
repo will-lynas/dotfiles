@@ -13,3 +13,4 @@
 - Make this install copyable and add http option
 - Add 'impersonal' installation option (No credentials)
 - Add encrypted ssh keys
+- Fix fzf making second line of prompt colorless
