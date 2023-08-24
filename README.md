@@ -1,8 +1,8 @@
 # Installation
 
 ## Install script
-This repo should be cloned to `~/.dotfiles`\
-Run `source install.sh`
+`git clone git@github.com:will-lynas/.dotfiles.git`\
+`source install.sh`
 
 ## Tmux
 `<prefix>I` to install plugins
