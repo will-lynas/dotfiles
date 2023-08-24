@@ -119,5 +119,7 @@ fi
 export TERM=tmux-256color
 
 [ -f "~/.ghcup/env" ] && source "~/.ghcup/env" # ghcup-env
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash ] && source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.bash
 
 source ~/.bash/prompt.sh
+source ~/.bash/fzf_options.sh
