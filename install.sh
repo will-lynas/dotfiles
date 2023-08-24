@@ -33,6 +33,9 @@ ln -s $SCRIPT_DIR/gitconfig ~/.gitconfig
 rm -f ~/.config/pylintrc
 ln -s $SCRIPT_DIR/pylintrc ~/.config/pylintrc
 
+# fzf
+sudo apt install fzf
+
 # Bash
 rm -rf ~/.bash ~/.bashrc ~/.bash_aliases
 ln -s $SCRIPT_DIR/bash ~/.bash
