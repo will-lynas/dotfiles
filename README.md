@@ -14,3 +14,4 @@
 - Add 'impersonal' installation option (No credentials)
 - Add encrypted ssh keys
 - Fix fzf making second line of prompt colorless
+- Add back *Z indicator for tmux windows
