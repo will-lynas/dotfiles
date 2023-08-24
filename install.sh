@@ -26,8 +26,12 @@ rm -rf ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Gitconfig
-rm -rf ~/.gitconfig
+rm -f ~/.gitconfig
 ln -s $SCRIPT_DIR/gitconfig ~/.gitconfig
+
+# Pylint
+rm -f ~/.config/pylintrc
+ln -s $SCRIPT_DIR/pylintrc ~/.config/pylintrc
 
 # Bash
 rm -rf ~/.bash ~/.bashrc ~/.bash_aliases
