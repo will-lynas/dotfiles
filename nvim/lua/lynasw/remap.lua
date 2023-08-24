@@ -33,3 +33,6 @@ vim.keymap.set("n", "<leader>D", [["+D]])
 
 --Make current file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+--Stop highlighted after a search
+vim.keymap.set("n", "<leader>h", function() vim.cmd("noh") end)
