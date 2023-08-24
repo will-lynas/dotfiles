@@ -9,3 +9,5 @@
 
 # TODO
 - GNU `stow` instead of manually symlinking
+- Append to `.bashrc` instead of overwriting
+- Make this install copyable and add http option
