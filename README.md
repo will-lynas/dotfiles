@@ -12,3 +12,4 @@
 - Append to `.bashrc` instead of overwriting
 - Make this install copyable and add http option
 - Add 'impersonal' installation option (No credentials)
+- Add encrypted ssh keys
