@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
-require("lazy").setup("lynasw.plugins")
+require("lazy").setup("custom.plugins")
 
-require("lynasw.remap")
-require("lynasw.set")
+require("custom.remap")
+require("custom.set")
