@@ -1,1 +1,1 @@
-require("lynasw")
+require("custom")
