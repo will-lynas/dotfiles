@@ -6,6 +6,13 @@ sudo apt -q autoremove -y
 
 mkdir -p ~/.config
 
+# Bash
+rm -rf ~/.bash
+ln -s $SCRIPT_DIR/bash ~/.bash
+[ -f ~/.bashrc ] || cp /etc/skel/.bashrc ~/.bashrc
+LINE="source ~/.bash/bashrc"
+grep -q "$LINE" ~/.bashrc || echo "$LINE" >> ~/.bashrc
+
 # Node
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -44,9 +51,5 @@ rm -rf ~/.config/fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all --xdg
 
-# Bash
-rm -rf ~/.bash ~/.bashrc ~/.bash_aliases
-ln -s $SCRIPT_DIR/bash ~/.bash
-ln -s ~/.bash/bashrc ~/.bashrc
-ln -s ~/.bash/bash_aliases.sh ~/.bash_aliases
+# Finally...
 source ~/.bashrc
