@@ -1,7 +1,16 @@
 # Installation
 
+## Clone
+SSH:
+```
+git clone git@github.com:will-lynas/.dotfiles.git
+```
+HTTP:
+```
+git clone https://github.com/will-lynas/.dotfiles.git
+```
+
 ## Install script
-`git clone git@github.com:will-lynas/.dotfiles.git`\
 `source install.sh`
 
 ## Tmux
