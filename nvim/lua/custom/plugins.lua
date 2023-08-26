@@ -39,5 +39,9 @@ return {
     },
 	{
 		'alexghergh/nvim-tmux-navigation'
-	}
+	},
+    {
+        'ggandor/leap.nvim',
+        dependencies = { 'tpope/vim-repeat' }
+    }
 }
