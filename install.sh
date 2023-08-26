@@ -36,9 +36,12 @@ ln -s ~/.config/tmux/tmux.conf ~/.tmux.conf
 rm -rf ~/.tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Gitconfig
-rm -f ~/.gitconfig
-ln -s $SCRIPT_DIR/gitconfig ~/.gitconfig
+# Gitconfig - don't overwrite any existing global config
+[ -f ~/.gitconfig ] || cp $SCRIPT_DIR/gitconfig ~/.gitconfig
+git config --global core.editor nvim
+# Set creds for this repo
+git -C $SCRIPT_DIR config user.name "Will Lynas"
+git -C $SCRIPT_DIR config user.email "43895423+will-lynas@users.noreply.github.com"
 
 # Pylint
 rm -f ~/.config/pylintrc
