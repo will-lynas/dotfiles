@@ -9,4 +9,6 @@ BLUE="\[\e[38;5;27m\]"
 PINK="\[\e[38;5;212m\]"
 ENDCOLOR="\[\e[m\]"
 
-export PS1="${GREEN}\u@\h ${BLUE}\w${PINK}\$(__git_ps1 ' [%s]') ${BLUE}\n$ ${ENDCOLOR}"
+# TODO - fix this - changes color when prompt changes?
+#export PS1="${GREEN}\u@\h ${BLUE}\w${PINK}\$(__git_ps1 ' [%s]') ${BLUE}\n$ ${ENDCOLOR}"
+export PS1="${GREEN}\u@\h ${BLUE}\w${PINK}\$(__git_ps1 ' [%s]') ${ENDCOLOR}\n$ "
