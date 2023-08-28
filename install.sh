@@ -22,6 +22,7 @@ ln -s $SCRIPT_DIR/inputrc ~/.inputrc
 # Node
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
+sudo apt-get install -y npm
 
 # Nvim install
 sudo apt install -y libfuse2 gcc ripgrep
