@@ -1,3 +1,7 @@
+function cwd()
+    return vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+end
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -22,14 +26,14 @@ require('lualine').setup {
     lualine_b = { 'branch', 'diff' },
     lualine_c = {'filename'},
     lualine_x = {'searchcount'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_y = { cwd },
+    lualine_z = {'progress', 'location'}
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {}
   },
