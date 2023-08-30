@@ -15,3 +15,6 @@ git clone https://github.com/will-lynas/.dotfiles.git
 
 ## Tmux
 `<prefix>I` to install plugins
+
+## Patched font
+Use Deja Vu Sans Mono Nerd Font
