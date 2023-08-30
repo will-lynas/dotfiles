@@ -37,11 +37,15 @@ return {
             {'L3MON4D3/LuaSnip'},     -- Required
         }
     },
-	{
-		'alexghergh/nvim-tmux-navigation'
-	},
+    {
+        'alexghergh/nvim-tmux-navigation'
+    },
     {
         'ggandor/leap.nvim',
         dependencies = { 'tpope/vim-repeat' }
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
     }
 }
