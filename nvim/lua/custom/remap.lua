@@ -17,6 +17,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>gp", [["_dP]])
 --Delete without overwriting buffer
 vim.keymap.set({"n", "v"}, "<leader>gd", [["_d]])
+vim.keymap.set({"n", "v"}, "<leader>gD", [["_D]])
 
 --Note - when you perform actions on the system clipboard, the results also get
 --stored in the normal buffers, overwriting them
