@@ -38,7 +38,7 @@ require('lualine').setup {
     lualine_b = {'filename'},
     lualine_c = {},
     lualine_x = {},
-    lualine_y = {},
+    lualine_y = {{'diff', colored=false}},
     lualine_z = {}
   },
   tabline = {},
