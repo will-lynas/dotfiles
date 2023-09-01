@@ -34,6 +34,7 @@ sudo mv nvim.appimage /bin/nvim
 backup_rm ~/.config/nvim
 ln -s $SCRIPT_DIR/nvim ~/.config/nvim
 rm -rf ~/.local/share/nvim/lazy
+rm -rf ~/.local/share/nvim/site/pack/packer # legacy
 
 # Tmux
 backup_rm ~/.config/tmux
