@@ -20,9 +20,7 @@ backup_rm ~/.inputrc
 ln -s $SCRIPT_DIR/inputrc ~/.inputrc
 
 # Node
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo apt-get install -y npm
+source $SCRIPT_DIR/install/get_node.sh
 
 # Nvim install
 sudo apt install -y libfuse2 gcc ripgrep
