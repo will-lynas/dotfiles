@@ -20,18 +20,18 @@ require('lualine').setup {
     always_divide_middle = true,
     globalstatus = false,
     refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
+      statusline = 100,
+      tabline = 100,
+      winbar = 100,
     }
   },
   sections = {
     lualine_a = { short_mode },
     lualine_b = {'filename'},
     lualine_c = { cwd },
-    lualine_x = { 'location'},
-    lualine_y = { 'progress' },
-    lualine_z = { 'branch', {'diff', colored=false} },
+    lualine_x = { 'location', 'progress' },
+    lualine_y = { 'diff' },
+    lualine_z = { 'branch' },
   },
   inactive_sections = {
     lualine_a = {},
