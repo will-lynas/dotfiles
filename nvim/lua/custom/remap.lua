@@ -41,3 +41,29 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 --Stop highlighted after a search
 vim.keymap.set("n", "<leader>hl", function() vim.cmd("noh") end)
+
+local function index(seq, elem)
+  for i, v in ipairs(seq) do
+    if v == elem then
+      return i
+    end
+  end
+
+  return nil
+end
+
+local function toggle_guide()
+  local wc = "120"
+  local cc = vim.opt.cc:get()
+  local i = index(cc, wc)
+
+  if i then
+    table.remove(cc, i)
+  else
+    table.insert(cc, wc)
+  end
+
+  vim.opt.cc = cc
+end
+
+vim.keymap.set("n", "<leader>hc", toggle_guide)
