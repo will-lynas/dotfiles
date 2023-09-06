@@ -18,7 +18,7 @@ require('lualine').setup {
     },
     ignore_focus = {},
     always_divide_middle = true,
-    globalstatus = false,
+    globalstatus = true,
     refresh = {
       statusline = 100,
       tabline = 100,
@@ -27,22 +27,43 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = { short_mode },
-    lualine_b = {'filename'},
-    lualine_c = { cwd },
-    lualine_x = { 'location', 'progress' },
-    lualine_y = { 'diff' },
-    lualine_z = { 'branch' },
+    lualine_b = { 'selectioncount' } ,
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = { 'location' },
+    lualine_z = { 'progress' },
   },
   inactive_sections = {
     lualine_a = {},
-    lualine_b = {'filename'},
+    lualine_b = {},
     lualine_c = {},
     lualine_x = {},
-    lualine_y = {{'diff', colored=false}},
+    lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
+  tabline = {
+      lualine_a = {},
+      lualine_b = { {'tabs', mode=2} },
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = { {'buffers', icons_enabled=false, mode=3} },
+      lualine_z = {}
+  },
+  winbar = {
+      lualine_a = {  'branch' },
+      lualine_b = { 'filename' },
+      lualine_c = { cwd },
+      lualine_x = { 'diagnostics' },
+      lualine_y = { 'diff' },
+      lualine_z = {}
+  },
+  inactive_winbar = {
+      lualine_a = {},
+      lualine_b = { 'filename' },
+      lualine_c = {},
+      lualine_x = { 'diagnostics' },
+      lualine_y = { 'diff' },
+      lualine_z = {}
+  },
   extensions = {}
 }
