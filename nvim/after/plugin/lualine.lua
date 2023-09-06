@@ -30,8 +30,8 @@ require('lualine').setup {
     lualine_b = { 'selectioncount' } ,
     lualine_c = {},
     lualine_x = {},
-    lualine_y = { 'location' },
-    lualine_z = { 'progress' },
+    lualine_y = { 'location', 'progress' },
+    lualine_z = { 'branch' },
   },
   inactive_sections = {
     lualine_a = {},
@@ -46,20 +46,20 @@ require('lualine').setup {
       lualine_b = { {'tabs', mode=2} },
       lualine_c = {},
       lualine_x = {},
-      lualine_y = { {'buffers', icons_enabled=false, mode=3} },
+      lualine_y = { {'buffers', icons_enabled=false, mode=1} },
       lualine_z = {}
   },
   winbar = {
-      lualine_a = {  'branch' },
-      lualine_b = { 'filename' },
-      lualine_c = { cwd },
+      lualine_a = { 'filename' },
+      lualine_b = { cwd },
+      lualine_c = {},
       lualine_x = { 'diagnostics' },
       lualine_y = { 'diff' },
       lualine_z = {}
   },
   inactive_winbar = {
-      lualine_a = {},
-      lualine_b = { 'filename' },
+      lualine_a = { 'filename' },
+      lualine_b = {},
       lualine_c = {},
       lualine_x = { 'diagnostics' },
       lualine_y = { 'diff' },
