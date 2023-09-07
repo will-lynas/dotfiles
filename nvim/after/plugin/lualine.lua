@@ -1,9 +1,13 @@
-function cwd()
+local function cwd()
     return vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
 end
 
-function short_mode()
+local function short_mode()
     return vim.api.nvim_get_mode().mode
+end
+
+local function maximize_status()
+  return vim.t.maximized and '  ' or ''
 end
 
 require('lualine').setup {
@@ -27,8 +31,8 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = { short_mode },
-    lualine_b = { 'selectioncount' } ,
-    lualine_c = {},
+    lualine_b = { maximize_status } ,
+    lualine_c = { 'selectioncount' },
     lualine_x = {},
     lualine_y = { 'location', 'progress' },
     lualine_z = { 'branch' },

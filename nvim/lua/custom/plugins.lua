@@ -50,5 +50,8 @@ return {
     },
     {
         'airblade/vim-gitgutter'
+    },
+    {
+        'declancm/maximize.nvim'
     }
 }
