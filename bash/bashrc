@@ -1,6 +1,4 @@
-export TERM=tmux-256color
 set -o vi
 
-source ~/.bash/bash_aliases.sh
+source ~/.common_shell_scripts/all.sh
 source ~/.bash/prompt.sh
-source ~/.bash/fzf_options.sh
