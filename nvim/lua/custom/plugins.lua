@@ -53,5 +53,9 @@ return {
     },
     {
         'declancm/maximize.nvim'
+    },
+    {
+        'lervag/vimtex',
+        lazy = false
     }
 }
