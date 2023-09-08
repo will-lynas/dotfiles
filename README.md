@@ -11,7 +11,8 @@ git clone https://github.com/will-lynas/.dotfiles.git
 ```
 
 ## Install script
-`source install.sh`
+`./install/install.sh` \
+Then either `bash` or `zsh`
 
 ## Tmux
 `<prefix>I` to install plugins
