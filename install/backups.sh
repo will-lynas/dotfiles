@@ -13,5 +13,5 @@ BACKUP_DIR=$(backup_dir_from_n $n)
 mkdir -p "${BACKUP_DIR}"
 
 backup_rm () {
-    mv "$1" "${BACKUP_DIR}"
+    mv "$1" "${BACKUP_DIR}" 2>/dev/null
 }
