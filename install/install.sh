@@ -1,3 +1,4 @@
+#!/bin/bash
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 source $SCRIPT_DIR/backups.sh
@@ -8,12 +9,23 @@ sudo apt -q autoremove -y
 
 mkdir -p ~/.config
 
+# Common scripts
+rm -rf ~/.common_shell_scripts
+ln -s $SCRIPT_DIR/../common_shell_scripts ~/.common_shell_scripts
+
 # Bash
 rm -rf ~/.bash
 ln -s $SCRIPT_DIR/../bash ~/.bash
 [ -f ~/.bashrc ] || cp /etc/skel/.bashrc ~/.bashrc
 LINE="source ~/.bash/bashrc"
 grep -q "$LINE" ~/.bashrc || echo "$LINE" >> ~/.bashrc
+
+# Zsh
+rm -rf ~/.zsh
+ln -s $SCRIPT_DIR/../zsh ~/.zsh
+[ -f ~/.zshrc ] || touch ~/.zshrc
+LINE="source ~/.zsh/zshrc"
+grep -q "$LINE" ~/.zshrc || echo "$LINE" >> ~/.zshrc
 
 # Inputrc
 backup_rm ~/.inputrc
