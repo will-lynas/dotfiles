@@ -1,10 +1,10 @@
 #!/bin/bash
 
-source ~/.df/install/backups.sh
-
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+source $SCRIPT_DIR/backups.sh
 backup_rm ~/.df
 ln -s $SCRIPT_DIR/.. ~/.df
+
 
 # Legacy removes
 backup_rm ~/.common_shell_scripts
@@ -25,6 +25,7 @@ echo "$LINE" >> ~/.bashrc
 
 # Zsh
 backup_rm ~/.zshrc
+~/.df/install/zsh.sh
 touch ~/.zshrc
 LINE="source ~/.df/zsh/zshrc"
 echo "$LINE" >> ~/.zshrc
