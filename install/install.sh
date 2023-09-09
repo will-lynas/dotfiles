@@ -48,6 +48,7 @@ backup_rm ~/.config/nvim
 ln -s ~/.df/nvim ~/.config/nvim
 rm -rf ~/.local/share/nvim/lazy
 rm -rf ~/.local/share/nvim/site/pack/packer # legacy
+rm -rf ~/.df/nvim/plugin/packer_compiled.lua # legacy
 
 # Tmux
 backup_rm ~/.config/tmux

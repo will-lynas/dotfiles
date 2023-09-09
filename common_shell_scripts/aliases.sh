@@ -7,3 +7,4 @@ alias egrep='egrep --color=auto'
 # Custom
 alias vim=nvim
 alias cat="batcat -n"
+alias c=clear
