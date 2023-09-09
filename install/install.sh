@@ -11,9 +11,9 @@ backup_rm ~/.common_shell_scripts
 backup_rm ~/.bash
 backup_rm ~/.zsh
 
-sudo apt-get -q update
+sudo apt -q update
 sudo apt -q autoremove -y
-#sudo apt-get -q upgrade -y
+#sudo apt -q upgrade -y
 
 mkdir -p ~/.config
 
