@@ -70,11 +70,14 @@ git -C ~/.df config user.email "43895423+will-lynas@users.noreply.github.com"
 backup_rm ~/.config/pylintrc
 ln -s ~/.df/pylintrc ~/.config/pylintrc
 
-# fzf
+# Fzf
 sudo apt install bat -y
 rm -rf ~/.fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all --xdg
 
-# latexmk
+# Latexmk
 sudo apt install latexmk -y
+
+# Fix timezone
+sudo timedatectl set-timezone Europe/London
