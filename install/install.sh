@@ -81,3 +81,6 @@ sudo apt install latexmk -y
 
 # Fix timezone
 sudo timedatectl set-timezone Europe/London
+
+# Zathura
+sudo apt install zathura

@@ -8,3 +8,4 @@ alias egrep='egrep --color=auto'
 alias vim=nvim
 alias cat="batcat -n"
 alias c=clear
+alias ta="tmux a"
