@@ -51,6 +51,7 @@ rm -rf ~/.local/share/nvim/site/pack/packer # legacy
 rm -rf ~/.df/nvim/plugin/packer_compiled.lua # legacy
 
 # Tmux
+sudo apt install tmux -y
 backup_rm ~/.config/tmux
 backup_rm ~/.tmux.conf
 ln -s ~/.df/tmux ~/.config/tmux
