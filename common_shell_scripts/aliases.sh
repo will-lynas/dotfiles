@@ -7,5 +7,7 @@ alias egrep='egrep --color=auto'
 # Custom
 alias vim=nvim
 alias cat="batcat -n"
-alias c=clear
+alias clear="clear -x"
+alias c="clear"
 alias ta="tmux a"
+alias zc="source ~/.zshrc" # Zsh Config
