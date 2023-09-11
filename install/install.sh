@@ -18,15 +18,15 @@ sudo apt -q autoremove -y
 mkdir -p ~/.config
 
 # Bash
-backup_rm ~/.bashrc
+#backup_rm ~/.bashrc
 cp /etc/skel/.bashrc ~/.bashrc
 LINE="source ~/.df/bash/bashrc"
 echo "$LINE" >> ~/.bashrc
 
 # Zsh
-backup_rm ~/.zshrc
+#backup_rm ~/.zshrc
+touch ~/.zshrc 2>/dev/null
 ~/.df/install/zsh.sh
-touch ~/.zshrc
 LINE="source ~/.df/zsh/zshrc"
 echo "$LINE" >> ~/.zshrc
 
