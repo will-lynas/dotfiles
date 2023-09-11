@@ -105,3 +105,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 source ~/.df/common_shell_scripts/all.sh
+
+source ~/.my_zsh_plugins/zsh-you-should-use/you-should-use.plugin.zsh
+export YSU_MESSAGE_POSITION="after"
+export YSU_HARDCORE=0
