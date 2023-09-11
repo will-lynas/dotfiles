@@ -107,5 +107,5 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.df/common_shell_scripts/all.sh
 
-export YSU_MESSAGE_POSITION="after"
-export YSU_HARDCORE=0
+export YSU_MESSAGE_POSITION="before"
+export YSU_HARDCORE=1
