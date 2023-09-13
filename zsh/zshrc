@@ -16,4 +16,5 @@ export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin"
 #export YSU_HARDCORE=0
 
 export ZVM_VI_EDITOR=nvim
+export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
