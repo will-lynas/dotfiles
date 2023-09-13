@@ -9,8 +9,11 @@ fi
 
 
 source ~/.df/common_shell_scripts/all.sh
-
 export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin"
+
 
 #export YSU_MESSAGE_POSITION="after"
 #export YSU_HARDCORE=0
+
+export ZVM_VI_EDITOR=nvim
+source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
