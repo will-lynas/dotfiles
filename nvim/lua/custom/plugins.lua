@@ -57,5 +57,8 @@ return {
     {
         'lervag/vimtex',
         lazy = false
+    },
+    {
+        'tpope/vim-eunuch'
     }
 }

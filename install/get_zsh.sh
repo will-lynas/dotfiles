@@ -1,7 +1,5 @@
 #!/bin/bash
 
-rm -rf ~/.my_zsh_plugins 2>/dev/null # Legacy
-
 sudo apt install zsh -y
 sudo chsh -s $(which zsh) $(whoami)
 
