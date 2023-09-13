@@ -12,8 +12,10 @@ source ~/.df/common_shell_scripts/all.sh
 export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin"
 
 
-#export YSU_MESSAGE_POSITION="after"
-#export YSU_HARDCORE=0
+export YSU_MESSAGE_POSITION="after"
+export YSU_HARDCORE=0
+export YSU_MESSAGE_FORMAT="$(tput setaf 5)Found existing %alias_type for '%command'. You should use: '%alias'$(tput sgr0)"
+source ~/.you-should-use/you-should-use.plugin.zsh
 
 export ZVM_VI_EDITOR=nvim
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT

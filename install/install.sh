@@ -14,6 +14,7 @@ mkdir -p ~/.config
 ~/.df/install/get_node.sh
 ~/.df/install/get_nvim.sh
 ~/.df/install/config_nvim.sh
+~/.df/install/get_zsh.sh
 ~/.df/install/setup_zsh.sh
 ~/.df/install/setup_tmux.sh
 ~/.df/install/config_git.sh
