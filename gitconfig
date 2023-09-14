@@ -3,3 +3,5 @@
 	name = Will Lynas
 [core]
 	editor = nvim
+[init]
+	defaultBranch = master
