@@ -30,3 +30,7 @@ alias gc="git commit"
 alias gca="git commit -a"
 alias gcam="git commit -am"
 alias gcm="git commit -m"
+
+alias grb="git rebase"
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
