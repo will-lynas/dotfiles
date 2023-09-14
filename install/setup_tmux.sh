@@ -14,5 +14,3 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 rm -rf ~/.tmux/plugins/tmux-text-macros
 git clone https://github.com/Neo-Oli/tmux-text-macros ~/.tmux/plugins/tmux-text-macros
-backup_rm ~/.tmux/custom-macros
-ln -s ~/.df/tmux/custom-macros ~/.tmux/custom-macros

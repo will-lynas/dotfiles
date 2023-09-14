@@ -1,6 +1,0 @@
-custom=(
-'../py3.py -m pytest unit_tests/test_pylint.py -vv --tb=short --no-header: pytest - just pylint'
-'../py3.py -m pytest unit_tests/test_mypy.py -vv --tb=short --no-header: pytest - just mypy'
-'../py3.py -m pytest unit_tests/ -vv --tb=short --no-header --cov --cov-report term-missing -x --ignore unit_tests/test_pylint.py --ignore unit_tests/test_mypy.py: pytest - everything else'
-'../py3.py -m pytest unit_tests/ -vv --tb=short --no-header --cov --cov-report term-missing -x: pytest - full'
-)
