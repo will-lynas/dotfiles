@@ -11,6 +11,7 @@ alias clear="clear -x"
 alias c="clear"
 alias ta="tmux a"
 alias zc="source ~/.zshrc" # Zsh Config
+alias zx="exec zsh"
 alias l="ls -lABh"
 alias la="ls -la"
 
