@@ -7,6 +7,7 @@ alias egrep='egrep --color=auto'
 # Custom
 alias vim=nvim
 alias cat="batcat -n"
+alias catp="batcat -p"
 alias clear="clear -x"
 alias c="clear"
 alias ta="tmux a"
