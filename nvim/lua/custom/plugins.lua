@@ -60,5 +60,8 @@ return {
     },
     {
         'tpope/vim-eunuch'
+    },
+    {
+        'max397574/better-escape.nvim'
     }
 }
