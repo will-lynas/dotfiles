@@ -24,6 +24,7 @@ alias gst="git status"
 alias grh="git reset --hard"
 alias gco="git checkout"
 alias gaa="git add --all"
+alias ga="git add"
 
 alias gd="git diff"
 alias gds="git diff --staged"
