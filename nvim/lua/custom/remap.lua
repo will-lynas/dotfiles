@@ -67,3 +67,9 @@ local function toggle_guide()
 end
 
 vim.keymap.set("n", "<leader>hc", toggle_guide)
+
+local function toggle_wrap()
+    vim.opt.wrap = not(vim.opt.wrap:get())
+end
+
+vim.keymap.set("n", "<leader>tw", toggle_wrap)
