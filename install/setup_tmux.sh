@@ -2,8 +2,6 @@
 
 source ~/.df/install/backups.sh
 
-sudo apt install tmux -y
-
 backup_rm ~/.config/tmux
 backup_rm ~/.tmux.conf
 ln -s ~/.df/tmux ~/.config/tmux
