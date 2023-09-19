@@ -37,5 +37,5 @@ ln -s ~/.df/pylintrc ~/.config/pylintrc
 sudo apt install latexmk -y
 # Zathura
 sudo apt install zathura -y
-
-
+# fd
+sudo apt install fd-find -y
