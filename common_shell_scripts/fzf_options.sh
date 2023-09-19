@@ -6,6 +6,6 @@ export FZF_DEFAULT_OPTS=\
 '--border=none '\
 '--info=inline-right '\
 '--no-scrollbar '\
-'--prompt="* " '\
-'--pointer="* " '\
-'--marker="*" '\
+'--prompt="> " '\
+'--pointer=">" '\
+'--marker=">" '\
