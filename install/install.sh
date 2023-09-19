@@ -16,6 +16,7 @@ mkdir -p ~/.config
 ~/.df/install/config_nvim.sh
 ~/.df/install/get_zsh.sh
 ~/.df/install/setup_zsh.sh
+~/.df/install/get_tmux.sh
 ~/.df/install/setup_tmux.sh
 ~/.df/install/config_git.sh
 ~/.df/install/get_fzf.sh
