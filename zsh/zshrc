@@ -9,7 +9,7 @@ fi
 
 
 source ~/.df/common_shell_scripts/all.sh
-export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin"
+export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin/:$HOME/.df/bin/"
 
 
 export YSU_MESSAGE_POSITION="after"
