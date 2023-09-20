@@ -39,3 +39,5 @@ sudo apt install latexmk -y
 sudo apt install zathura -y
 # fd
 sudo apt install fd-find -y
+# python 3.11
+sudo apt install python3.11 -y
