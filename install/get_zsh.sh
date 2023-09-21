@@ -11,3 +11,6 @@ git clone https://github.com/jeffreytse/zsh-vi-mode.git ~/.zsh-vi-mode
 
 rm -rf ~/.you-should-use
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ~/.you-should-use
+
+rm -rf ~/.zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-syntax-highlighting

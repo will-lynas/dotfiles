@@ -21,3 +21,5 @@ export ZVM_VI_EDITOR=nvim
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 export ZVM_VI_ESCAPE_BINDKEY=jk
 source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
