@@ -40,3 +40,6 @@ alias grba="git rebase --abort"
 
 # g[it] s[et] c[redentials]
 alias gsc="git config user.name 'Will Lynas' && git config user.email '43895423+will-lynas@users.noreply.github.com'"
+
+# s[ource] v[env]
+alias sv="source venv/bin/activate"
