@@ -37,6 +37,7 @@ alias gcm="git commit -m"
 alias grb="git rebase"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
+alias grbom="git rebase origin/master"
 
 # g[it] s[et] c[redentials]
 alias gsc="git config user.name 'Will Lynas' && git config user.email '43895423+will-lynas@users.noreply.github.com'"
