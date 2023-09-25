@@ -18,7 +18,6 @@ export YSU_MESSAGE_FORMAT="$(tput setaf 5)Found existing %alias_type for '%comma
 source ~/.you-should-use/you-should-use.plugin.zsh
 
 export ZVM_VI_EDITOR=nvim
-export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 export ZVM_VI_ESCAPE_BINDKEY=jk
 source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
