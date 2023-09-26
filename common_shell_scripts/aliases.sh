@@ -44,3 +44,8 @@ alias gsc="git config user.name 'Will Lynas' && git config user.email '43895423+
 
 # s[ource] v[env]
 alias sv="source venv/bin/activate"
+
+alias ..="cd .."
+alias ...="cd ..."
+alias ....="cd ...."
+alias .....="cd ....."
