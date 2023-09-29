@@ -15,6 +15,7 @@ alias zc="source ~/.zshrc" # Zsh Config
 alias zx="exec zsh"
 alias l="ls -lABh"
 alias la="ls -la"
+alias md="mkdir -p"
 
 # Tmux
 alias ta="tmux a"
