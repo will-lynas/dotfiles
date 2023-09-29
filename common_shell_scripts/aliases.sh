@@ -10,11 +10,15 @@ alias cat="batcat -n"
 alias catp="batcat -p"
 alias clear="clear -x"
 alias c="clear"
-alias ta="tmux a"
+alias e="exit"
 alias zc="source ~/.zshrc" # Zsh Config
 alias zx="exec zsh"
 alias l="ls -lABh"
 alias la="ls -la"
+
+# Tmux
+alias ta="tmux a"
+alias ts="tmux new -s"
 
 # Custom git - modified from oh my zsh git plugin
 alias gp="git push"
