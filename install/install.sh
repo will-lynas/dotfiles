@@ -35,8 +35,9 @@ ln -s ~/.df/pylintrc ~/.config/pylintrc
 # INSTALLS
 # Latexmk
 sudo apt install latexmk -y
-# Zathura
+# Latex things
 sudo apt install zathura -y
+sudo apt install xdotool -y
 # fd
 sudo apt install fd-find -y
 # python 3.11
