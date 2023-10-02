@@ -50,7 +50,7 @@ require('lualine').setup {
       lualine_b = { {'tabs', mode=2} },
       lualine_c = {},
       lualine_x = {},
-      lualine_y = { {'buffers', icons_enabled=false, mode=1} },
+      lualine_y = { {'buffers', icons_enabled=false, mode=3} },
       lualine_z = {}
   },
   winbar = {
