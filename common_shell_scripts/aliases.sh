@@ -55,3 +55,5 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+alias br="sudo brightnessctl set"
