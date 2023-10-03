@@ -33,7 +33,6 @@ return {
     ),
     {}
     ),
-
     -- ########################################################################
     h.s(
     {
@@ -49,5 +48,37 @@ return {
     }
     ),
     {condition = h.in_mathzone}
+    ),
+    -- ########################################################################
+    h.s(
+    {
+        trig = "([^%a])mm",
+        wordTrig = false,
+        regTrig = true,
+        snippetType = "autosnippet"
+    },
+    h.fmta([[
+    <>$<>$
+    ]],
+    {
+        h.f( function(_, snip) return snip.captures[1] end ),
+        h.i(1),
+    }
     )
+    ),
+    -- ########################################################################
+    h.s(
+    {
+        trig = ";cm",
+        snippetType = "autosnippet"
+    },
+    h.fmta([[
+    \<>{<>}
+    ]],
+    {
+        h.i(1),
+        h.d(2, h.get_visual)
+    }
+    )
+    ),
 }
