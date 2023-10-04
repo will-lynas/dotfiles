@@ -24,6 +24,7 @@ alias ts="tmux new -s"
 
 # Custom git - modified from oh my zsh git plugin
 alias gp="git push"
+alias gpf="git push -f"
 alias gf="git fetch"
 alias gl="git log"
 alias gst="git status"
