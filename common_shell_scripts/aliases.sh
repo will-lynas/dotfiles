@@ -60,3 +60,4 @@ alias .....="cd ../../../.."
 alias br="sudo brightnessctl set"
 
 alias -g L="| less"
+alias -g ner="2> /dev/null"
