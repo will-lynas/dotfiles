@@ -1,0 +1,4 @@
+#!/bin/bash
+# git rebase origin master/main
+BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+git rebase "origin/${BRANCH}"
