@@ -3,7 +3,7 @@
 # local branches only
 
 # v[im] o[pen]
-CHOICE=$(git branch | fzf| tr -d ‘[:space:]’)
+CHOICE=$(git branch | fzf | tr -d ‘[:space:]’ | tr -d '*')
 if [ ! -z "$CHOICE" ]
 then
     git checkout "$CHOICE"
