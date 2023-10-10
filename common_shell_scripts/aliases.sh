@@ -30,6 +30,7 @@ alias gl="git log"
 alias gst="git status"
 alias grh="git reset --hard"
 alias gco="git checkout"
+alias gcob="git checkout -b"
 alias gaa="git add --all"
 alias ga="git add"
 
