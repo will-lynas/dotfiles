@@ -35,6 +35,9 @@ alias gl="git log"
 alias gst="git status"
 alias grh="git reset --hard"
 
+alias gb="git branch"
+alias gbd="git branch -d"
+
 alias ga="git add"
 alias gaa="git add --all"
 
