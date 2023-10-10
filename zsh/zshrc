@@ -15,7 +15,7 @@ export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin/:$HOME/.df/bin/"
 source ~/.you-should-use/you-should-use.plugin.zsh
 export YSU_MESSAGE_POSITION="after"
 export YSU_HARDCORE=0
-export YSU_MESSAGE_FORMAT="$(tput setaf 5)Found existing %alias_type for '%command'. You should use: '%alias'$(tput sgr0)"
+export YSU_MESSAGE_FORMAT="$(tput setaf 5)YSU '%command' -> '%alias'$(tput sgr0)"
 
 source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export ZVM_VI_EDITOR=nvim
