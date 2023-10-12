@@ -28,13 +28,6 @@ sudo timedatectl set-timezone Europe/London
 # Inputrc
 backup_rm ~/.inputrc
 ln -s ~/.df/inputrc ~/.inputrc
-# Pylintrc
-backup_rm ~/.config/pylintrc
-ln -s ~/.df/pylintrc ~/.config/pylintrc
-# i3 config
-backup_rm ~/.config/i3/config
-mkdir -p ~/.config/i3
-ln -s ~/.df/i3_config ~/.config/i3/config
 
 # INSTALLS
 # Latexmk
