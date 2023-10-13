@@ -55,6 +55,7 @@ alias gc="git commit"
 alias gca="git commit -a"
 alias gcam="git commit -am"
 alias gcm="git commit -m"
+alias gcn="git commit --amend"
 
 alias grb="git rebase"
 alias grbc="git rebase --continue"
