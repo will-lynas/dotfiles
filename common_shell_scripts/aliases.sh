@@ -19,7 +19,6 @@ alias lg="git ls-files" # List Git
 alias md="mkdir -p"
 alias sv="source venv/bin/activate" # Source Venv
 alias br="sudo brightnessctl set"
-alias wcl="wc -l"
 
 alias ..="cd .."
 alias ...="cd ../.."
