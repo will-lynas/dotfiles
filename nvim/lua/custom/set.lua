@@ -40,4 +40,4 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
