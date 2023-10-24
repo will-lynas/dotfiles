@@ -18,7 +18,6 @@ alias la="ls -la"
 alias lg="git ls-files" # List Git
 alias md="mkdir -p"
 alias sv="source venv/bin/activate" # Source Venv
-alias br="sudo brightnessctl set"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -61,7 +60,3 @@ alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 
 alias gsc="git config user.name 'Will Lynas' && git config user.email '43895423+will-lynas@users.noreply.github.com'" # Git Set Credentials
-
-# Globals
-alias -g L="| less"
-alias -g ner="2> /dev/null"
