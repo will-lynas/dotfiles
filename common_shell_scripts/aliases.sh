@@ -18,6 +18,7 @@ alias la="ls -la"
 alias lg="git ls-files" # List Git
 alias md="mkdir -p"
 alias sv="source venv/bin/activate" # Source Venv
+alias psg="ps aux | grep -v grep | grep"
 
 alias ..="cd .."
 alias ...="cd ../.."
