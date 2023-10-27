@@ -60,4 +60,7 @@ alias grb="git rebase"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 
+alias gsh="git stash"
+alias gsp="git stash pop"
+
 alias gsc="git config user.name 'Will Lynas' && git config user.email '43895423+will-lynas@users.noreply.github.com'" # Git Set Credentials
