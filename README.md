@@ -3,11 +3,11 @@
 ## Clone
 SSH:
 ```
-git clone git@github.com:will-lynas/.dotfiles.git
+git clone git@github.com:will-lynas/dotfiles.git
 ```
 HTTP:
 ```
-git clone https://github.com/will-lynas/.dotfiles.git
+git clone https://github.com/will-lynas/dotfiles.git
 ```
 
 ## Install script
