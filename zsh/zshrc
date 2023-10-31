@@ -19,7 +19,13 @@ export YSU_MESSAGE_FORMAT="$(tput setaf 5)'%alias' = '%command'$(tput sgr0)"
 
 source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export ZVM_VI_EDITOR=nvim
-export ZVM_VI_ESCAPE_BINDKEY=jk
+export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+
+# fzf ctrl-r is overwritten in insert mode.
+function fix_ctrl_r(){
+    source ~/.config/fzf/fzf.zsh
+}
+zvm_after_init_commands+=(fix_ctrl_r)
 
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
