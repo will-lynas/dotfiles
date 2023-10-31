@@ -1,0 +1,18 @@
+#!/usr/bin/env python3.11
+from os.path import expanduser
+from time import strftime, localtime
+import pprint
+
+history_file = expanduser("~/.zsh_history")
+with open(history_file, "r") as f:
+    parsed_lines = []
+    for line in f.readlines():
+        split_line = line.strip().split(";")
+        info = split_line[0]
+        command = ";".join(split_line[1:])
+        split_info = info.split(":")
+        time = strftime('%Y-%m-%d %H:%M:%S', localtime(int(split_info[1].strip())))
+        parsed_lines.append((time, command))
+
+pprint.pprint((parsed_lines))
+
