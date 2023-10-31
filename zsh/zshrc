@@ -29,3 +29,11 @@ function fix_ctrl_r(){
 zvm_after_init_commands+=(fix_ctrl_r)
 
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export HISTFILE=~/.zsh_history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
