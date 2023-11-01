@@ -43,6 +43,7 @@ alias gaa="git add --all"
 
 alias gp="git push"
 alias gpf="git push -f"
+alias gpuo="git push -u origin"
 
 alias gco="git checkout"
 alias gcob="git checkout -b"
