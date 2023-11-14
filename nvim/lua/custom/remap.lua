@@ -42,6 +42,12 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 --Stop highlighted after a search
 vim.keymap.set("n", "<leader>hl", function() vim.cmd("noh") end)
 
+--Run file with python
+vim.keymap.set("n", "<leader>py", function() vim.cmd("!python3.11 %") end)
+
+--Run executable file (shebang?)
+vim.keymap.set("n", "<leader>rn", function() vim.cmd("!python3.11 %") end)
+
 local function index(seq, elem)
   for i, v in ipairs(seq) do
     if v == elem then
