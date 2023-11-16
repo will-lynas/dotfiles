@@ -19,6 +19,7 @@ export YSU_MESSAGE_FORMAT="$(tput setaf 5)%alias = %command$(tput sgr0)"
 
 source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 export ZVM_VI_EDITOR=nvim
+export ZVM_VI_ESCAPE_BINDKEY= # legacy
 export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 
@@ -39,3 +40,5 @@ setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
 export PROMPT_EOL_MARK=''
+
+setopt extendedglob
