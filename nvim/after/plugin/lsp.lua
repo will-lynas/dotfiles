@@ -20,3 +20,12 @@ vim.diagnostic.config({
         severity = { min = vim.diagnostic.severity.WARN }
     }
 })
+
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
+cmp.setup({
+  mapping = {
+    ['<Tab>'] = cmp.mapping.confirm({select = true}),
+  }
+})
