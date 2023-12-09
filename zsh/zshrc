@@ -42,3 +42,8 @@ setopt EXTENDED_HISTORY
 export PROMPT_EOL_MARK=''
 
 setopt extendedglob
+
+preexec() {
+    mkdir -p "/tmp/tmux_pane_history"
+    echo "$1" >> "/tmp/tmux_pane_history/$TMUX_PANE"
+}
