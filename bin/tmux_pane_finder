@@ -19,7 +19,7 @@ for line in lines:
 joined_options = "\n".join(d.keys())
 
 try:
-    dest = d[check_output(f"echo '{joined_options}' | fzf --preview='' --height='100%'", shell=True).decode("utf-8").rstrip("\n")]
+    dest = check_output(f"echo '{joined_options}' | fzf --preview='~/.df/bin/tmux_pane_previewer {{}}' --preview-window=down,wrap --height='100%'", shell=True).decode("utf-8").split()[0]
     check_output(f"tmux switch-client -t '{dest}'", shell=True)
 except CalledProcessError:
     pass
