@@ -1,0 +1,25 @@
+#!/usr/bin/env python3.11
+from subprocess import CalledProcessError, check_output
+
+lines = [line.split("|") for line in check_output(
+        'tmux list-panes -a -F '
+        '"#{pane_id}|#{session_name}:#{window_index}.#{pane_index}|#{window_name}|#{pane_current_path}"',
+        shell=True
+        ).decode("utf-8").strip().split("\n")]
+
+d = {}
+for line in lines:
+    id = line[0]
+    try:
+        with open(f"/tmp/tmux_pane_history/{id}") as f:
+            cmds = " " + "; ".join([c for c in f.read().split("\n")[-4:] if c])
+    except FileNotFoundError:
+        cmds = ""
+    d[" ".join(part for part in line[1:] if part) + cmds] = id # should be unique because of session/index/index
+joined_options = "\n".join(d.keys())
+
+try:
+    dest = d[check_output(f"echo '{joined_options}' | fzf --preview='' --height='100%'", shell=True).decode("utf-8").rstrip("\n")]
+    check_output(f"tmux switch-client -t '{dest}'", shell=True)
+except CalledProcessError:
+    pass
