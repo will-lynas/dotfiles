@@ -1,26 +1,57 @@
 #!/usr/bin/env python3.11
-from subprocess import CalledProcessError, check_output
+from subprocess import check_output, CalledProcessError
+import argparse
 
-lines = [line.split("|") for line in check_output(
+parser = argparse.ArgumentParser()
+parser.add_argument("preview_line", nargs="?")
+args = parser.parse_args()
+
+def run_cmd(cmd):
+    return check_output(cmd, shell=True).decode("utf-8")
+
+def get_lines():
+    return [line.split("|") for line in run_cmd(
         'tmux list-panes -a -F '
-        '"#{pane_id}|#{session_name}:#{window_index}.#{pane_index}|#{window_name}|#{pane_current_path}"',
-        shell=True
-        ).decode("utf-8").strip().split("\n")]
+        '"#{pane_id}|#{session_name}:#{window_index}.#{pane_index}|'
+        '#{window_name}|#{pane_current_path}"'
+        ).strip().split("\n")]
 
-number_of_commands = 10
-d = {}
-for line in lines:
-    id = line[0]
+def get_cmds(id, number_of_commands=10):
     try:
         with open(f"/tmp/tmux_pane_history/{id}") as f:
-            cmds = " " + " ".join([c for c in f.read().split("\n")[-(number_of_commands+1):][::-1] if c])
+            return list(reversed(list(filter(None, f.read().split("\n")))))[:number_of_commands]
     except FileNotFoundError:
-        cmds = ""
-    d[" ".join(part for part in line[1:] if part) + cmds] = id # should be unique because of session/index/index
-joined_options = "\n".join(d.keys())
+        return []
 
-try:
-    dest = check_output(f"echo '{joined_options}' | fzf --preview='~/.df/bin/tmux_pane_previewer {{}}' --preview-window=down,wrap --height='100%'", shell=True).decode("utf-8").split()[0]
-    check_output(f"tmux switch-client -t '{dest}'", shell=True)
-except CalledProcessError:
-    pass
+if args.preview_line:
+    name = args.preview_line.split(" ")[0]
+    line = list(filter(lambda x: x[1] == name, get_lines()))[0]
+    id, name, window_name, path = line
+    window_name = window_name or "<no window name>"
+    cmds = "\n".join(get_cmds(id)) or "<no command history>"
+    print(f"""
+{name}
+{window_name}
+
+{path}
+
+{cmds}
+    """.strip())
+else:
+    d = {}
+    for line in get_lines():
+        id = line[0]
+        cmds = get_cmds(id)
+        remaining = list(filter(None, line[1:]))
+        out_line = " ".join(remaining + cmds)
+        d[out_line] = id
+    joined_options = "\n".join(d.keys())
+    try:
+        line = run_cmd(
+                f"echo '{joined_options}' | "
+                "fzf --preview='~/.df/bin/tmux_pane_finder {}' "
+                "--preview-window=down,wrap --height='100%'"
+                )
+        run_cmd(f"tmux switch-client -t '{d[line.strip()]}'")
+    except CalledProcessError:
+        pass
