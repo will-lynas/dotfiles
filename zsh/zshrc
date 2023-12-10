@@ -8,7 +8,7 @@ fi
 [[ ! -f ~/.df/zsh/p10k.zsh ]] || source ~/.df/zsh/p10k.zsh
 
 
-source ~/.df/common_shell_scripts/all.sh
+source ~/.df/zsh/scripts/all.sh
 export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin/:$HOME/.df/bin/"
 
 
@@ -40,8 +40,6 @@ setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
 export PROMPT_EOL_MARK=''
-
-setopt extendedglob
 
 preexec() {
     mkdir -p "/tmp/tmux_pane_history"
