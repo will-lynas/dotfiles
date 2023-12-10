@@ -41,7 +41,7 @@ else:
     d = {}
     for line in get_lines():
         id = line[0]
-        cmds = get_cmds(id)
+        cmds = [cmd for cmd in get_cmds(id) if "'" not in cmd] # ' will break the echo command below
         remaining = list(filter(None, line[1:]))
         out_line = " ".join(remaining + cmds)
         d[out_line] = id
@@ -51,7 +51,7 @@ else:
                 f"echo '{joined_options}' | "
                 "fzf --preview='~/.df/bin/tmux_pane_finder {}' "
                 "--preview-window=down,wrap --height='100%'"
-                )
-        run_cmd(f"tmux switch-client -t '{d[line.strip()]}'")
+                ).strip("\n")
+        run_cmd(f"tmux switch-client -t '{d[line]}'")
     except CalledProcessError:
         pass
