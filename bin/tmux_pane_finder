@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.11
 from subprocess import check_output, CalledProcessError
+from collections import OrderedDict
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -19,7 +20,11 @@ def get_lines():
 def get_cmds(id, number_of_commands=10):
     try:
         with open(f"/tmp/tmux_pane_history/{id}") as f:
-            return list(reversed(list(filter(None, f.read().split("\n")))))[:number_of_commands]
+            return list(OrderedDict.fromkeys(
+                        list(reversed(
+                            list(filter(None, f.read().split("\n")))
+                        ))
+                    ))[:number_of_commands]
     except FileNotFoundError:
         return []
 
