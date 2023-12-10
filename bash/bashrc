@@ -1,4 +1,0 @@
-set -o vi
-
-source ~/.df/common_shell_scripts/all.sh
-source ~/.df/bash/prompt.sh
