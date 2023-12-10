@@ -7,12 +7,13 @@ lines = [line.split("|") for line in check_output(
         shell=True
         ).decode("utf-8").strip().split("\n")]
 
+number_of_commands = 10
 d = {}
 for line in lines:
     id = line[0]
     try:
         with open(f"/tmp/tmux_pane_history/{id}") as f:
-            cmds = " " + "; ".join([c for c in f.read().split("\n")[-4:] if c])
+            cmds = " " + " ".join([c for c in f.read().split("\n")[-(number_of_commands+1):][::-1] if c])
     except FileNotFoundError:
         cmds = ""
     d[" ".join(part for part in line[1:] if part) + cmds] = id # should be unique because of session/index/index
