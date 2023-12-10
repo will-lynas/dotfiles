@@ -1,6 +1,0 @@
-#!/bin/bash
-
-#backup_rm ~/.bashrc
-[ -f ~/.bashrc ] || cp /etc/skel/.bashrc ~/.bashrc
-LINE="source ~/.df/bash/bashrc"
-grep -q "$LINE" ~/.bashrc || echo "$LINE" >> ~/.bashrc
