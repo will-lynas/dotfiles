@@ -11,11 +11,14 @@ def run_cmd(cmd):
     return check_output(cmd, shell=True).decode("utf-8")
 
 def get_lines():
-    return [line.split("|") for line in run_cmd(
+    out = [line.split("|") for line in run_cmd(
         'tmux list-panes -a -F '
         '"#{pane_id}|#{session_name}:#{window_index}.#{pane_index}|'
         '#{window_name}|#{pane_current_path}"'
         ).strip().split("\n")]
+    for line in out:
+        line[1] = line[1].replace(" ", "_")
+    return out
 
 def get_cmds(id, number_of_commands=10):
     try:
