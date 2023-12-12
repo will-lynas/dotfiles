@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>vp", vim.cmd.Ex)
 
 --Move around lines in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -18,35 +18,32 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 --Pasting over highlighted area preserves buffer
-vim.keymap.set("x", "<leader>gp", [["_dP]])
+vim.keymap.set("x", "<leader>kp", [["_dP]])
 --Delete without overwriting buffer
-vim.keymap.set({"n", "v"}, "<leader>gd", [["_d]])
-vim.keymap.set({"n", "v"}, "<leader>gD", [["_D]])
+vim.keymap.set({"n", "v"}, "<leader>kd", [["_d]])
+vim.keymap.set({"n", "v"}, "<leader>kD", [["_D]])
 
 --Note - when you perform actions on the system clipboard, the results also get
 --stored in the normal buffers, overwriting them
 
 --Yank to system clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({"n", "v"}, "<leader>sy", [["+y]])
+vim.keymap.set("n", "<leader>sY", [["+Y]])
 --Paste from system clipboard
-vim.keymap.set({"n", "v"}, "<leader>pp", [["+p]])
-vim.keymap.set("n", "<leader>PP", [["+P]])
+vim.keymap.set({"n", "v"}, "<leader>sp", [["+p]])
+vim.keymap.set("n", "<leader>sP", [["+P]])
 --Delete to system clipboard
-vim.keymap.set({"n", "v"}, "<leader>d", [["+d]])
-vim.keymap.set("n", "<leader>D", [["+D]])
+vim.keymap.set({"n", "v"}, "<leader>sd", [["+d]])
+vim.keymap.set("n", "<leader>sD", [["+D]])
 
 --Make current file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>xf", "<cmd>!chmod +x %<CR>", { silent = true })
 
 --Stop highlighted after a search
-vim.keymap.set("n", "<leader>hl", function() vim.cmd("noh") end)
+vim.keymap.set("n", "<leader>th", function() vim.cmd("noh") end)
 
 --Run file with python
-vim.keymap.set("n", "<leader>py", function() vim.cmd("!python3.11 %") end)
-
---Run executable file (shebang?)
-vim.keymap.set("n", "<leader>rn", function() vim.cmd("!python3.11 %") end)
+vim.keymap.set("n", "<leader>xp", function() vim.cmd("!python3.11 %") end)
 
 local function index(seq, elem)
   for i, v in ipairs(seq) do
@@ -72,7 +69,7 @@ local function toggle_guide()
   vim.opt.cc = cc
 end
 
-vim.keymap.set("n", "<leader>hc", toggle_guide)
+vim.keymap.set("n", "<leader>tc", toggle_guide)
 
 local function toggle_wrap()
     vim.opt.wrap = not(vim.opt.wrap:get())
