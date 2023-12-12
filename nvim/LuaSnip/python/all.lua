@@ -13,4 +13,22 @@ return {
     ),
     {}
     ),
+    h.s(
+    {
+        trig=";db",
+        snippetType = "autosnippet"
+    },
+    h.fmta([[
+    def debugger(func):
+        def inner(*args, **kwargs):
+            out = func(*args, **kwargs)
+            print(args, kwargs, out)
+            return out
+        return inner
+    ]],
+    {}
+    ),
+    {}
+    ),
+
 }
