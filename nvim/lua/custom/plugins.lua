@@ -68,5 +68,12 @@ return {
         "L3MON4D3/LuaSnip",
         version = "2.*",
         build = "make install_jsregexp"
+    },
+    {
+        'numToStr/Comment.nvim',
+        lazy = false,
+        opts = {
+            -- add any options here
+        },
     }
 }
