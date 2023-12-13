@@ -18,7 +18,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 --Pasting over highlighted area preserves buffer
-vim.keymap.set("x", "<leader>kp", [["_dP]])
+vim.keymap.set("x", "<leader>kp", [["_dp]])
 --Delete without overwriting buffer
 vim.keymap.set({"n", "v"}, "<leader>kd", [["_d]])
 vim.keymap.set({"n", "v"}, "<leader>kD", [["_D]])
