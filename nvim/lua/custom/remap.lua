@@ -6,10 +6,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 --Stop J moving cursor
 vim.keymap.set("n", "J", "mzJ`z")
---Make a version of gJ that is actually useful
---Now it's like J but with no space, rather than just joining all the whitespace from indents
---This isn't very robust. Will break if used with empty line below.
-vim.keymap.set("n", "<leader>j", "mzJ`[diw`z")
 
 --Half-page and searching keep cursor in the middle
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -44,6 +40,13 @@ vim.keymap.set("n", "<leader>th", function() vim.cmd("noh") end)
 
 --Run file with python
 vim.keymap.set("n", "<leader>xp", function() vim.cmd("!python3.11 %") end)
+
+-- Tab controls
+vim.keymap.set("n", "<leader>n", function() vim.cmd("tabnew") end)
+vim.keymap.set("n", "<leader>1", function() vim.cmd("silent! tabn 1") end)
+vim.keymap.set("n", "<leader>2", function() vim.cmd("silent! tabn 2") end)
+vim.keymap.set("n", "<leader>3", function() vim.cmd("silent! tabn 3") end)
+vim.keymap.set("n", "<leader>4", function() vim.cmd("silent! tabn 4") end)
 
 local function index(seq, elem)
   for i, v in ipairs(seq) do
