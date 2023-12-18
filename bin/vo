@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# v[im] o[pen]
-CHOICE=$(fzf-tmux -p -w80% -h80% --query "$*")
-if [ ! -z "$CHOICE" ]
-then
-    nvim "$CHOICE"
-fi

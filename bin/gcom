@@ -1,4 +1,0 @@
-#!/bin/bash
-# git checkout master/main
-BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-git checkout "${BRANCH}"
