@@ -49,8 +49,7 @@ fzf_git_branch() {
     git rev-parse HEAD > /dev/null 2>&1 || return
     git branch --color=always --all --sort=-committerdate |
         grep -v HEAD |
-        fzf-tmux -p 80%,80% --ansi --no-multi \
-        --preview-window right:65% \
+        fzf-tmux -p 95%,80% --ansi --no-multi \
         --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed "s/.* //" <<< {})' |
         sed "s/.* //"
 }
