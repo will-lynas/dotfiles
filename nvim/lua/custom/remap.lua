@@ -43,10 +43,10 @@ vim.keymap.set("n", "<leader>xp", function() vim.cmd("!python3.11 %") end)
 
 -- Tab controls
 vim.keymap.set("n", "<leader>n", function() vim.cmd("tabnew") end)
-vim.keymap.set("n", "<leader>1", function() vim.cmd("silent! tabn 1") end)
-vim.keymap.set("n", "<leader>2", function() vim.cmd("silent! tabn 2") end)
-vim.keymap.set("n", "<leader>3", function() vim.cmd("silent! tabn 3") end)
-vim.keymap.set("n", "<leader>4", function() vim.cmd("silent! tabn 4") end)
+vim.keymap.set("n", "<M-1>", function() vim.cmd("silent! tabn 1") end)
+vim.keymap.set("n", "<M-2>", function() vim.cmd("silent! tabn 2") end)
+vim.keymap.set("n", "<M-3>", function() vim.cmd("silent! tabn 3") end)
+vim.keymap.set("n", "<M-4>", function() vim.cmd("silent! tabn 4") end)
 
 local function index(seq, elem)
   for i, v in ipairs(seq) do
