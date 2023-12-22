@@ -75,5 +75,8 @@ return {
         opts = {
             -- add any options here
         },
+    },
+    {
+        'zbirenbaum/copilot.lua'
     }
 }
