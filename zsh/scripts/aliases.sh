@@ -1,6 +1,8 @@
 setup_git_globals() {
     # Get rid of annoying git push -u
     git config --global push.autoSetupRemote true
+    git config --global push.default current
+
     git config --global advice.statushints false
     git config --global core.editor nvim
     git config --global init.defaultbranch main
