@@ -12,6 +12,9 @@ backup_rm ~/.tmux.conf
 ln -s ~/.df/tmux ~/.config/tmux
 ln -s ~/.df/tmux/tmux.conf ~/.tmux.conf
 
+backup_rm ~/.config/Code/User/settings.json
+ln -s ~/.df/vscode_settings.json ~/.config/Code/User/settings.json
+
 touch ~/.zshrc 2>/dev/null
 LINE="source ~/.df/zsh/zshrc"
 grep -q "$LINE" ~/.zshrc || echo "$LINE" >> ~/.zshrc
