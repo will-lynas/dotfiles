@@ -13,7 +13,9 @@ ln -s ~/.df/tmux ~/.config/tmux
 ln -s ~/.df/tmux/tmux.conf ~/.tmux.conf
 
 backup_rm ~/.config/Code/User/settings.json
-ln -s ~/.df/vscode_settings.json ~/.config/Code/User/settings.json
+ln -s ~/.df/vscode/settings.json ~/.config/Code/User/settings.json
+backup_rm ~/.config/Code/User/keybindings.json
+ln -s ~/.df/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
 touch ~/.zshrc 2>/dev/null
 LINE="source ~/.df/zsh/zshrc"

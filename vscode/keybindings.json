@@ -1,0 +1,12 @@
+[
+    {
+        "key": "ctrl+b",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.toggleActivityBarVisibility",
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        }
+     }
+]
