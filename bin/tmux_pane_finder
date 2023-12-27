@@ -57,7 +57,7 @@ else:
     try:
         line = run_cmd(
                 f"echo '{joined_options}' | "
-                "fzf --preview='~/.df/bin/tmux_pane_finder {}' "
+                "fzf --preview='~/dotfiles/bin/tmux_pane_finder {}' "
                 "--preview-window=down,wrap --height='100%'"
                 ).strip("\n")
         run_cmd(f"tmux switch-client -t '{d[line]}'")
