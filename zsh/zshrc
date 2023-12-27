@@ -5,11 +5,11 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-[[ ! -f ~/.df/zsh/p10k.zsh ]] || source ~/.df/zsh/p10k.zsh
+[[ ! -f ~/dotfiles/zsh/p10k.zsh ]] || source ~/dotfiles/zsh/p10k.zsh
 
 
-source ~/.df/zsh/scripts/all.sh
-export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin/:$HOME/.df/bin/"
+source ~/dotfiles/zsh/scripts/all.sh
+export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin/:$HOME/dotfiles/bin/"
 
 
 source ~/.you-should-use/you-should-use.plugin.zsh
