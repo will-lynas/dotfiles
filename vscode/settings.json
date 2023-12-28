@@ -8,5 +8,8 @@
     "notebook.consolidatedRunButton": true,
     "notebook.globalToolbarShowLabel": "never",
     "editor.autoClosingBrackets": "never",
-    "workbench.activityBar.location": "hidden"
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.neovimClean": true
 }
