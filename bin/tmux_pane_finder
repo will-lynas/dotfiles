@@ -58,7 +58,7 @@ else:
         line = run_cmd(
                 f"echo '{joined_options}' | "
                 "fzf --preview='~/dotfiles/bin/tmux_pane_finder {}' "
-                "--preview-window=down,wrap --height='100%'"
+                "--preview-window=right,wrap --height='100%'"
                 ).strip("\n")
         run_cmd(f"tmux switch-client -t '{d[line]}'")
     except CalledProcessError:
