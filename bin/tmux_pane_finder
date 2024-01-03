@@ -1,20 +1,25 @@
 #!/usr/bin/env python3.11
-from subprocess import check_output, CalledProcessError
+from subprocess import check_output, CalledProcessError, DEVNULL
 from collections import OrderedDict
 import argparse
+
+RED = '\033[31m'
+GREEN = '\033[32m'
+BLUE = '\033[34m'
+ENDC = '\033[0m'
 
 parser = argparse.ArgumentParser()
 parser.add_argument("preview_line", nargs="?")
 args = parser.parse_args()
 
-def run_cmd(cmd):
-    return check_output(cmd, shell=True).decode("utf-8")
+def run_cmd(cmd, suppress=False):
+    stderr = DEVNULL if suppress else None
+    return check_output(cmd, shell=True, stderr=stderr).decode("utf-8")
 
 def get_lines():
     out = [line.split("|") for line in run_cmd(
         'tmux list-panes -a -F '
-        '"#{pane_id}|#{session_name}:#{window_index}.#{pane_index}|'
-        '#{window_name}|#{pane_current_path}"'
+        '"#{pane_id}|#{session_name}:#{window_index}.#{pane_index}|#{window_name}|#{pane_current_path}"'
         ).strip().split("\n")]
     for line in out:
         line[1] = line[1].replace(" ", "_")
@@ -31,17 +36,22 @@ def get_cmds(id, number_of_commands=10):
     except FileNotFoundError:
         return []
 
+def get_git_root(path):
+    try:
+        path = run_cmd(f"git -C '{path}' rev-parse --show-toplevel", suppress=True).strip()
+    except CalledProcessError:
+        pass
+    return run_cmd(f"basename '{path}'").strip()
+
 if args.preview_line:
     name = args.preview_line.split(" ")[0]
     line = list(filter(lambda x: x[1] == name, get_lines()))[0]
     id, name, window_name, path = line
+    root_path = get_git_root(path)
     window_name = window_name or "<no window name>"
     cmds = "\n".join(get_cmds(id)) or "<no command history>"
     print(f"""
-{name}
-{window_name}
-
-{path}
+{BLUE}{name}{ENDC} {GREEN}{window_name}{ENDC} {RED}{root_path}{ENDC}
 
 {cmds}
     """.strip())
