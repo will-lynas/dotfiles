@@ -139,6 +139,7 @@ alias gcan="git commit -a --amend"
 alias gcn="git commit --amend"
 
 alias grb="git rebase"
+alias grbi="git rebase -i"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias grbom="rebase_on_default"
