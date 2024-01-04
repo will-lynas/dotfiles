@@ -39,9 +39,9 @@ def get_cmds(id, number_of_commands=10):
 def get_git_root(path):
     try:
         path = run_cmd(f"git -C '{path}' rev-parse --show-toplevel", suppress=True).strip()
+        return run_cmd(f"basename '{path}'").strip()
     except CalledProcessError:
-        pass
-    return run_cmd(f"basename '{path}'").strip()
+        return path
 
 if args.preview_line:
     name = args.preview_line.split(" ")[0]
