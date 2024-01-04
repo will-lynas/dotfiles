@@ -1,8 +1,10 @@
 #!/usr/bin/env python3.11
-from subprocess import check_output, CalledProcessError, DEVNULL
+import subprocess
 from collections import OrderedDict
 import argparse
+import tempfile
 
+BLACK = '\033[30m'
 RED = '\033[31m'
 GREEN = '\033[32m'
 BLUE = '\033[34m'
@@ -13,63 +15,88 @@ parser.add_argument("preview_line", nargs="?")
 args = parser.parse_args()
 
 def run_cmd(cmd, suppress=False):
-    stderr = DEVNULL if suppress else None
-    return check_output(cmd, shell=True, stderr=stderr).decode("utf-8")
+    stderr = subprocess.DEVNULL if suppress else None
+    return subprocess.check_output(cmd, shell=True, stderr=stderr).decode("utf-8")
 
 def get_lines():
-    out = [line.split("|") for line in run_cmd(
+    lines = [line.split("|") for line in run_cmd(
         'tmux list-panes -a -F '
-        '"#{pane_id}|#{session_name}:#{window_index}.#{pane_index}|#{window_name}|#{pane_current_path}"'
+        '"#{pane_id}|#{session_name}|#{window_index}|#{pane_index}|#{window_name}|#{pane_current_path}"'
         ).strip().split("\n")]
-    for line in out:
-        line[1] = line[1].replace(" ", "_")
-    return out
+    for line in lines:
+        line[0] = line[0][1:] # Remove %
+        line[1] = line[1] or "-"
+        line[4] = line[4] or "-"
+        line[5] = get_git_root(line[5])
+    return lines
 
-def get_cmds(id, number_of_commands=10):
+def get_cmds(id, number_of_commands=20):
     try:
         with open(f"/tmp/tmux_pane_history/{id}") as f:
+            # Filter out duplicates
+            # Reversal is so new runs get show instead of old runs
             return list(OrderedDict.fromkeys(
                         list(reversed(
                             list(filter(None, f.read().split("\n")))
                         ))
                     ))[:number_of_commands]
     except FileNotFoundError:
-        return []
+        return ["-"]
 
 def get_git_root(path):
+    # Return the name of the git repo if we're in one
     try:
-        path = run_cmd(f"git -C '{path}' rev-parse --show-toplevel", suppress=True).strip()
+        path = run_cmd(f"git -C '{path}' rev-parse --show-toplevel", suppress=True)
         return run_cmd(f"basename '{path}'").strip()
-    except CalledProcessError:
+    except subprocess.CalledProcessError:
         return path
 
+def pad_and_join(lines):
+    section_lengths = [max(len(line[i]) for line in lines) for i in range(len(lines[0]))]
+    out = ""
+    for line in lines:
+        for i in range(len(line)):
+            out += line[i].ljust(section_lengths[i] + 1)
+        out += "\n"
+    return out
+
+def do_fzf(lines):
+    joined_lines = pad_and_join(lines)
+    options = ("--ansi "
+               "--preview='~/dotfiles/bin/tmux_pane_finder {}' "
+               "--preview-window=right,wrap "
+               "--height=100 "
+               "--color='hl:white:underline,hl+:white:underline'")
+    with (tempfile.NamedTemporaryFile(delete=False) as input_file,
+          tempfile.NamedTemporaryFile() as output_file):
+        with open(input_file.name, "w") as f:
+            f.write(joined_lines)
+
+        run_cmd(f'cat "{input_file.name}" | fzf {options} > "{output_file.name}"')
+
+        with open(output_file.name) as f:
+            return f.read().strip("\n")
+
 if args.preview_line:
-    name = args.preview_line.split(" ")[0]
-    line = list(filter(lambda x: x[1] == name, get_lines()))[0]
-    id, name, window_name, path = line
-    root_path = get_git_root(path)
-    window_name = window_name or "<no window name>"
-    cmds = "\n".join(get_cmds(id)) or "<no command history>"
+    id = args.preview_line.split(" ")[0]
+    line = list(filter(lambda x: x[0] == id, get_lines()))[0]
+    _, session_name, window_index, pane_index, window_name, path = line
+    cmds = "\n".join(get_cmds(id))
     print(f"""
-{BLUE}{name}{ENDC} {GREEN}{window_name}{ENDC} {RED}{root_path}{ENDC}
+{BLUE}{session_name} {window_index},{pane_index}{ENDC} {GREEN}{window_name}{ENDC} {RED}{path}{ENDC}
 
 {cmds}
     """.strip())
+
 else:
-    d = {}
+    lines = []
     for line in get_lines():
-        id = line[0]
-        cmds = [cmd for cmd in get_cmds(id) if "'" not in cmd] # ' will break the echo command below
-        remaining = list(filter(None, line[1:]))
-        out_line = " ".join(remaining + cmds)
-        d[out_line] = id
-    joined_options = "\n".join(d.keys())
+        id, session_name, window_index, pane_index, window_name, path = line
+        cmds = " ".join(get_cmds(id))
+        lines.append([id, f"{BLUE}{session_name} {window_index},{pane_index}{ENDC}", f"{GREEN}{window_name}{ENDC}", f"{RED}{path}{ENDC}", f"{BLACK}{cmds}{ENDC}"])
     try:
-        line = run_cmd(
-                f"echo '{joined_options}' | "
-                "fzf --preview='~/dotfiles/bin/tmux_pane_finder {}' "
-                "--preview-window=right,wrap --height='100%'"
-                ).strip("\n")
-        run_cmd(f"tmux switch-client -t '{d[line]}'")
-    except CalledProcessError:
+        line = do_fzf(lines)
+        id = line.split(" ")[0]
+        run_cmd(f"tmux switch-client -t '%{id}'")
+    except subprocess.CalledProcessError:
         pass
