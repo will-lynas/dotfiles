@@ -1,5 +1,6 @@
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+vim.keymap.set('n', '<leader>pc', function() builtin.find_files({hidden=true, no_ignore=true, no_ignore_parent=true}) end, {})
 vim.keymap.set('n', '<leader>pg', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>px', function() builtin.live_grep({ vimgrep_arguments = {
