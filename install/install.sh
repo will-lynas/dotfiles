@@ -12,8 +12,7 @@ backup_rm ~/.tmux.conf
 ln -s ~/dotfiles/tmux ~/.config/tmux
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
-backup_rm ~/.config/Code/User/settings.json
-ln -s ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json
+mkdir -p ~/.config/Code/User
 backup_rm ~/.config/Code/User/keybindings.json
 ln -s ~/dotfiles/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
