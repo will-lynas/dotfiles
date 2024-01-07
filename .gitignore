@@ -1,4 +1,4 @@
 tmux/plugins/
 nvim/lazy-lock.json
 tmux/non_synced_macros.json
-tmux_macros/
+tmux-macros/
