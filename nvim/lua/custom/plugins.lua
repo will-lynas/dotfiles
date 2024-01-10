@@ -64,9 +64,6 @@ return {
         'tpope/vim-eunuch'
     },
     {
-        'max397574/better-escape.nvim'
-    },
-    {
         "L3MON4D3/LuaSnip",
         version = "2.*",
         build = "make install_jsregexp"
