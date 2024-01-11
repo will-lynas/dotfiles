@@ -1,5 +1,7 @@
 require('rose-pine').setup({
-	disable_italics = true,
+    styles = {
+        italic = false
+    }
 })
 
 local color = "rose-pine"
