@@ -1,3 +1,8 @@
+require("mason").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = { "lua_ls", "pyright" },
+}
+
 local lsp = require('lsp-zero').preset({})
 
 lsp.on_attach(function(_, bufnr)
