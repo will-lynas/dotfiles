@@ -1,4 +1,4 @@
-setup_git_globals() {
+df_setup_git_globals() {
     # Get rid of annoying git push -u
     # git >= 2.37
     git config --global push.autoSetupRemote true
@@ -7,13 +7,13 @@ setup_git_globals() {
     git config --global init.defaultbranch main
 }
 
-setup_global_git_name() {
+df_setup_global_git_name() {
     git config --global user.name "Will Lynas"
     git config --global user.email \
         "43895423+will-lynas@users.noreply.github.com"
 }
 
-fix_default_branch() {
+df_fix_default_branch() {
     # This needs to be run (once per repo) if the automatic
     # default branch detection fails. We can't just run every
     # time because it connects to the remote and is slow.
@@ -46,7 +46,7 @@ mkdir_and_cd() {
 }
 
 # https://polothy.github.io/post/2019-08-19-fzf-git-checkout/
-fzf_git_branch() {
+df_fzf_git_branch() {
     git rev-parse HEAD > /dev/null 2>&1 || return
     git branch --color=always --all --sort=-committerdate |
         grep -v HEAD |
