@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/dotfiles/install/backups.sh
+source ~/dotfiles/scripts/backups.sh
 
 mkdir -p ~/.config
 
