@@ -47,3 +47,5 @@ preexec() {
         echo "$1" >> "/tmp/tmux_pane_history/${TMUX_PANE:1}"
     fi
 }
+
+eval "$(direnv hook zsh)"
