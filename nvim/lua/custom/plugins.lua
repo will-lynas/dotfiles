@@ -72,5 +72,8 @@ return {
     },
     {
         'zbirenbaum/copilot.lua'
+    },
+    {
+        "Pocco81/auto-save.nvim"
     }
 }
