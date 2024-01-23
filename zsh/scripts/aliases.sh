@@ -58,7 +58,7 @@ df_fzf_git_branch() {
 git_checkout_fuzzy() {
     git rev-parse HEAD > /dev/null 2>&1 || return
     local branch
-    branch=$(fzf_git_branch)
+    branch=$(df_fzf_git_branch)
     if [[ "$branch" = "" ]]; then
         return
     fi
