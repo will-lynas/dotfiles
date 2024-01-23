@@ -31,6 +31,10 @@ rebase_on_default() {
     git rebase "origin/$(git_default_branch)"
 }
 
+rebase_on_default_interactive() {
+    git rebase -i "origin/$(git_default_branch)"
+}
+
 reset_on_default() {
     git reset --hard "origin/$(git_default_branch)"
 }
@@ -143,6 +147,7 @@ alias grbi="git rebase -i"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias grbom="rebase_on_default"
+alias grbiom="rebase_on_default_interactive"
 
 alias gsh="git stash"
 alias gsp="git stash pop"
