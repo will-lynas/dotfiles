@@ -98,6 +98,7 @@ alias mc="mkdir_and_cd"
 alias sv="source venv/bin/activate"
 alias pv="python3.11 -m venv venv"
 alias psg="ps aux | grep -v grep | grep"
+alias da="direnv allow ."
 
 alias ..="cd .."
 alias ...="cd ../.."
