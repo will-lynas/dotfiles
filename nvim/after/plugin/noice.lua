@@ -16,3 +16,6 @@ require("noice").setup({
     lsp_doc_border = false, -- add a border to hover docs and signature help
   },
 })
+
+require("telescope").load_extension("noice")
+vim.keymap.set('n', '<leader>pn', function () require("noice").cmd("telescope") end, {})
