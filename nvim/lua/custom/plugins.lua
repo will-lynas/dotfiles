@@ -79,5 +79,8 @@ return {
       dependencies = {
         "MunifTanjim/nui.nvim",
         }
+    },
+    {
+        'AndreM222/copilot-lualine'
     }
 }

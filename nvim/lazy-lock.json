@@ -2,6 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "8ae1dedd988eb56441b7858bd1e8554dfadaa46d" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
+  "copilot-lualine": { "branch": "main", "commit": "f7f0b3b3e7b0183d65fb5416c1d3e210e8a67ba6" },
   "copilot.lua": { "branch": "master", "commit": "b03617a6dc4bc88b65ab5deac1631da9a9c2dcaf" },
   "harpoon": { "branch": "harpoon2", "commit": "2cd4e03372f7ee5692c8caa220f479ea07970f17" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
