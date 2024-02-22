@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
-vim.opt.mouse = ""
+vim.opt.mouse = "a" -- 'a' for all
 
 vim.opt.list = false -- Add a toggle function for this later. Disabled for the moment.
 vim.opt.listchars = "leadmultispace:    ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽   ⸽,extends:▸,precedes:◂,"
