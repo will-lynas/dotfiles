@@ -15,7 +15,14 @@ end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 require("lspconfig").rust_analyzer.setup({
-    cmd = {'rustup', 'run', 'stable', 'rust-analyzer'}
+    cmd = {'rustup', 'run', 'stable', 'rust-analyzer'},
+    settings = {
+        ["rust-analyzer"] = {
+            check = {
+                command = "clippy"
+            },
+        }
+    }
 })
 
 lsp.setup()
