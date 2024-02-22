@@ -1,5 +1,8 @@
 vim.keymap.set("n", "<leader>vp", vim.cmd.Ex)
 
+--Select text that was last pasted
+vim.keymap.set("n", "gp", "`[v`]")
+
 --Move around lines in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
