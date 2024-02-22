@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "pyright", "texlab", "gopls" }
+    ensure_installed = { "lua_ls" }
 }
 
 local lsp = require('lsp-zero').preset({})

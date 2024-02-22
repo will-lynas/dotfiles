@@ -7,10 +7,24 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 [[ ! -f ~/dotfiles/zsh/p10k.zsh ]] || source ~/dotfiles/zsh/p10k.zsh
 
+export TERM=xterm-256color
 
-source ~/dotfiles/zsh/scripts/all.sh
-export PATH="$PATH:$HOME/.ghcup/bin/:$HOME/.cabal/bin/:$HOME/dotfiles/bin/"
+export FZF_DEFAULT_OPTS=\
+'--multi '\
+'--height 40% '\
+'--reverse '\
+'--preview "batcat --style=numbers --color=always --line-range :500 {} 2>/dev/null" '\
+'--border=none '\
+'--info=inline-right '\
+'--no-scrollbar '\
+'--prompt="> " '\
+'--pointer=">" '\
+'--marker=">" '\
 
+source ~/dotfiles/zsh/aliases.sh
+
+export PATH="$PATH:$HOME/dotfiles/bin/"
+typeset -U path # Remove duplicates
 
 source ~/.you-should-use/you-should-use.plugin.zsh
 export YSU_MESSAGE_POSITION="after"
@@ -47,5 +61,3 @@ preexec() {
         echo "$1" >> "/tmp/tmux_pane_history/${TMUX_PANE:1}"
     fi
 }
-
-eval "$(direnv hook zsh)"
