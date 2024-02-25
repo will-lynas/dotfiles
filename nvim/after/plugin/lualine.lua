@@ -35,7 +35,7 @@ require('lualine').setup {
     lualine_c = { 'selectioncount' },
     lualine_x = {},
     lualine_y = { 'location', 'progress' },
-    lualine_z = { 'copilot', 'branch' },
+    lualine_z = { 'branch' },
   },
   inactive_sections = {
     lualine_a = {},
