@@ -77,4 +77,10 @@ return {
         "MunifTanjim/nui.nvim",
         }
     },
+    {
+        'rust-lang/rust.vim',
+        config = function()
+            vim.cmd("let g:rustfmt_autosave = 1")
+        end
+    }
 }
