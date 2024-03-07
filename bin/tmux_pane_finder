@@ -4,7 +4,7 @@ from collections import OrderedDict
 import argparse
 import tempfile
 
-BLACK = '\033[30m'
+GREY = '\033[38;5;242m'
 RED = '\033[31m'
 GREEN = '\033[32m'
 BLUE = '\033[34m'
@@ -93,7 +93,7 @@ else:
     for line in get_lines():
         id, session_name, window_index, pane_index, window_name, path = line
         cmds = " ".join(get_cmds(id))
-        lines.append([id, f"{BLUE}{session_name} {window_index},{pane_index}{ENDC}", f"{GREEN}{window_name}{ENDC}", f"{RED}{path}{ENDC}", f"{BLACK}{cmds}{ENDC}"])
+        lines.append([id, f"{BLUE}{session_name} {window_index},{pane_index}{ENDC}", f"{GREEN}{window_name}{ENDC}", f"{RED}{path}{ENDC}", f"{GREY}{cmds}{ENDC}"])
     try:
         line = do_fzf(lines)
         id = line.split(" ")[0]
