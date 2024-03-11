@@ -39,7 +39,7 @@ vim.keymap.set("n", "<leader>sD", [["+D]])
 vim.keymap.set("n", "<leader>xf", "<cmd>!chmod +x %<CR>", { silent = true })
 
 --Stop highlighted after a search
-vim.keymap.set("n", "<leader>th", function() vim.cmd("noh") end)
+vim.keymap.set("n", "<Esc>", function() vim.cmd("noh") end)
 
 --Run file with python
 vim.keymap.set("n", "<leader>xp", function() vim.cmd("!python3.11 %") end)
