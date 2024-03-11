@@ -398,7 +398,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
-vim.opt.mouse = "a" -- 'a' for all
+vim.opt.mouse = "" -- Disable mouse
 
 vim.keymap.set("n", "<leader>vp", vim.cmd.Ex)
 
