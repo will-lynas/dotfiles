@@ -61,14 +61,8 @@ return {
         lazy = false
     },
     {
-        'tpope/vim-eunuch'
-    },
-    {
         'numToStr/Comment.nvim',
         lazy = false,
-        opts = {
-            -- add any options here
-        },
     },
     {
       "folke/noice.nvim",
