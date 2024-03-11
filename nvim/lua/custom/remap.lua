@@ -51,6 +51,13 @@ vim.keymap.set("n", "<M-2>", function() vim.cmd("silent! tabn 2") end)
 vim.keymap.set("n", "<M-3>", function() vim.cmd("silent! tabn 3") end)
 vim.keymap.set("n", "<M-4>", function() vim.cmd("silent! tabn 4") end)
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 local function index(seq, elem)
   for i, v in ipairs(seq) do
     if v == elem then
