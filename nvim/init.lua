@@ -22,23 +22,25 @@ require("lazy").setup({
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>pf', function()
                 builtin.find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})
-            end, {})
+            end,
+            {desc = "Files"})
             vim.keymap.set('n', '<leader>pc', function()
                 builtin.find_files({hidden=true, no_ignore=true, no_ignore_parent=true})
-            end, {})
-            vim.keymap.set('n', '<leader>pg', builtin.git_files, {})
-            vim.keymap.set('n', '<leader>ps', builtin.live_grep, {})
+            end,
+            {desc = "All Files"})
+            vim.keymap.set('n', '<leader>pg', builtin.git_files, {desc = "Git Files"})
+            vim.keymap.set('n', '<leader>ps', builtin.live_grep, {desc = "Live Grep"})
             vim.keymap.set('n', '<leader>px', function()
                 builtin.live_grep({ vimgrep_arguments = {
                 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-uu'
-            }}) end, {})
-            vim.keymap.set('n', '<leader>pb', builtin.buffers, {})
-            vim.keymap.set('n', '<leader>ph', builtin.help_tags, {})
-            vim.keymap.set('n', '<leader>pk', builtin.keymaps, {})
-            vim.keymap.set('n', '<leader>pt', builtin.vim_options, {})
-            vim.keymap.set('n', '<leader>pm', builtin.man_pages, {})
-            vim.keymap.set('n', '<leader>pd', function() builtin.diagnostics({bufnr=0}) end, {})
-            vim.keymap.set('n', '<leader>pr', builtin.resume, {})
+            }}) end, {desc = "Live Grep All"})
+            vim.keymap.set('n', '<leader>pb', builtin.buffers, {desc = "Buffers"})
+            vim.keymap.set('n', '<leader>ph', builtin.help_tags, {desc = "Help Tags"})
+            vim.keymap.set('n', '<leader>pk', builtin.keymaps, {desc = "Keymaps"})
+            vim.keymap.set('n', '<leader>pt', builtin.vim_options, {desc = "Options"})
+            vim.keymap.set('n', '<leader>pm', builtin.man_pages, {desc = "Man pages"})
+            vim.keymap.set('n', '<leader>pd', function() builtin.diagnostics({bufnr=0}) end, {desc = "Diagnostics"})
+            vim.keymap.set('n', '<leader>pr', builtin.resume, {desc = "Resume Last State"})
         end
     },
     {
@@ -97,33 +99,39 @@ require("lazy").setup({
             end
 
             vim.keymap.set("n", "<leader>pr", function() toggle_telescope(harpoon:list()) end,
-            { desc = "Open harpoon window" })
+            { desc = "Harpoon" })
 
-            vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
-            vim.keymap.set("n", "<leader>m", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+            vim.keymap.set("n", "<leader>a",
+            function() harpoon:list():append() end,
+            {desc="Add to Harpoon"})
+            vim.keymap.set("n", "<leader>m",
+            function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+            {desc="Harpoon Menu"})
 
-            vim.keymap.set("n", "<M-q>", function() harpoon:list():select(1) end)
-            vim.keymap.set("n", "<M-w>", function() harpoon:list():select(2) end)
-            vim.keymap.set("n", "<M-e>", function() harpoon:list():select(3) end)
-            vim.keymap.set("n", "<M-r>", function() harpoon:list():select(4) end)
+            vim.keymap.set("n", "<M-q>", function() harpoon:list():select(1) end, {desc="Harpoon File 1"})
+            vim.keymap.set("n", "<M-w>", function() harpoon:list():select(2) end, {desc="Harpoon File 2"})
+            vim.keymap.set("n", "<M-e>", function() harpoon:list():select(3) end, {desc="Harpoon File 3"})
+            vim.keymap.set("n", "<M-r>", function() harpoon:list():select(4) end, {desc="Harpoon File 4"})
         end
     },
     {
         'mbbill/undotree',
         config = function()
-            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, {desc="Toggle Undotree"})
         end
     },
     {
         'tpope/vim-fugitive',
         config = function()
-            vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+            vim.keymap.set("n", "<leader>gs", vim.cmd.Git, {desc="Git Status (Fugitive)"})
             vim.keymap.set("n", "<leader>gb", function()
                 vim.cmd.Git("blame")
-            end)
+            end,
+            {desc="Git Blame"})
             vim.keymap.set("n", "<leader>gp", function()
                 vim.cmd.Git("push")
-            end)
+            end,
+            {desc="Git Push"})
         end
     },
     {
@@ -291,7 +299,11 @@ require("lazy").setup({
         end
     },
     {
-        'airblade/vim-gitgutter'
+        'airblade/vim-gitgutter',
+        config = function()
+            vim.opt.number = true
+            vim.opt.relativenumber = true
+        end
     },
     {
         'declancm/maximize.nvim',
@@ -345,13 +357,33 @@ require("lazy").setup({
             })
 
             require("telescope").load_extension("noice")
-            vim.keymap.set('n', '<leader>pn', function () require("noice").cmd("telescope") end, {})
+            vim.keymap.set('n', '<leader>pn', function () require("noice").cmd("telescope") end, {desc = "Message History"})
         end
     },
     {
         'rust-lang/rust.vim',
         config = function()
             vim.cmd("let g:rustfmt_autosave = 1")
+        end
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 500
+        end,
+        opts = {},
+        config = function()
+            require('which-key').register {
+                ['<leader>p'] = { name = 'Telescope', _ = 'which_key_ignore' },
+                ['<leader>g'] = { name = 'Git', _ = 'which_key_ignore' },
+                ['<leader>x'] = { name = 'Execute', _ = 'which_key_ignore' },
+                ['<leader>k'] = { name = 'Keep Buffer', _ = 'which_key_ignore' },
+                ['<leader>s'] = { name = 'System Clipboard', _ = 'which_key_ignore' },
+                ['<leader>h'] = { name = 'Hunk', _ = 'which_key_ignore' },
+                ['<leader>t'] = { name = 'Toggle', _ = 'which_key_ignore' },
+            }
         end
     }
 })
@@ -400,7 +432,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 
 vim.opt.mouse = "" -- Disable mouse
 
-vim.keymap.set("n", "<leader>vp", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>v", vim.cmd.Ex, {desc="File Explorer"})
 
 --Select text that was last pasted
 vim.keymap.set("n", "gp", "`[v`]")
@@ -419,7 +451,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 --Pasting over highlighted area preserves buffer
-vim.keymap.set("x", "<leader>kp", [["_dp]])
+vim.keymap.set("x", "<leader>kp", [["_dp]], {desc = "Paste"})
 --Delete without overwriting buffer
 vim.keymap.set({"n", "v"}, "<leader>kd", [["_d]])
 vim.keymap.set({"n", "v"}, "<leader>kD", [["_D]])
@@ -444,14 +476,14 @@ vim.keymap.set("n", "<leader>xf", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<Esc>", function() vim.cmd("noh") end)
 
 --Run file with python
-vim.keymap.set("n", "<leader>xp", function() vim.cmd("!python3.11 %") end)
+vim.keymap.set("n", "<leader>xp", function() vim.cmd("!python3.11 %") end, {desc = "Python"})
 
 -- Tab controls
-vim.keymap.set("n", "<leader>n", function() vim.cmd("tabnew") end)
-vim.keymap.set("n", "<M-1>", function() vim.cmd("silent! tabn 1") end)
-vim.keymap.set("n", "<M-2>", function() vim.cmd("silent! tabn 2") end)
-vim.keymap.set("n", "<M-3>", function() vim.cmd("silent! tabn 3") end)
-vim.keymap.set("n", "<M-4>", function() vim.cmd("silent! tabn 4") end)
+vim.keymap.set("n", "<leader>n", function() vim.cmd("tabnew") end, {desc = "New Tab"})
+vim.keymap.set("n", "<M-1>", function() vim.cmd("silent! tabn 1") end, {desc = "Tab 1"})
+vim.keymap.set("n", "<M-2>", function() vim.cmd("silent! tabn 2") end, {desc = "Tab 2"})
+vim.keymap.set("n", "<M-3>", function() vim.cmd("silent! tabn 3") end, {desc = "Tab 3"})
+vim.keymap.set("n", "<M-4>", function() vim.cmd("silent! tabn 4") end, {desc = "Tab 4"})
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
@@ -484,10 +516,10 @@ local function toggle_guide()
   vim.opt.cc = cc
 end
 
-vim.keymap.set("n", "<leader>tc", toggle_guide)
+vim.keymap.set("n", "<leader>tc", toggle_guide, {desc="Color Column"})
 
 local function toggle_wrap()
     vim.opt.wrap = not(vim.opt.wrap)
 end
 
-vim.keymap.set("n", "<leader>tw", toggle_wrap)
+vim.keymap.set("n", "<leader>tw", toggle_wrap, {desc="Wrap"})
