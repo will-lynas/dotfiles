@@ -658,3 +658,7 @@ vim.diagnostic.config({
 		severity = { min = vim.diagnostic.severity.WARN },
 	},
 })
+
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous [D]iagnostic" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next [D]iagnostic" })
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Diagnostic Float" })
