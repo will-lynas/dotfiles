@@ -57,18 +57,16 @@ require("lazy").setup({
     },
     {
         'nvim-treesitter/nvim-treesitter',
-        config = function()
-            require('nvim-treesitter.configs').setup({
-                ensure_installed = "all",
-                sync_install = false,
-                auto_install = true,
-                highlight = {
-                    enable = true,
-                    disable = { "latex" },
-                    additional_vim_regex_highlighting = { "python" }, -- Fix for python indentation
-                }
-            })
-        end
+        opts = {
+            ensure_installed = "all",
+            sync_install = false,
+            auto_install = true,
+            highlight = {
+                enable = true,
+                disable = { "latex" },
+                additional_vim_regex_highlighting = { "python" }, -- Fix for python indentation
+            }
+        }
     },
     {
         'nvim-treesitter/playground'
@@ -201,19 +199,17 @@ require("lazy").setup({
     },
     {
         'alexghergh/nvim-tmux-navigation',
-        config = function()
-            require('nvim-tmux-navigation').setup {
-                disable_when_zoomed = true, -- defaults to false
-                keybindings = {
-                    left = "<C-h>",
-                    down = "<C-j>",
-                    up = "<C-k>",
-                    right = "<C-l>",
-                    last_active = "<C-\\>",
-                    next = "<C-Space>",
-                }
+        opts = {
+            disable_when_zoomed = true, -- defaults to false
+            keybindings = {
+                left = "<C-h>",
+                down = "<C-j>",
+                up = "<C-k>",
+                right = "<C-l>",
+                last_active = "<C-\\>",
+                next = "<C-Space>",
             }
-        end
+        }
     },
     {
         'ggandor/leap.nvim',
@@ -307,9 +303,7 @@ require("lazy").setup({
     },
     {
         'declancm/maximize.nvim',
-        config = function()
-            require('maximize').setup()
-        end
+        opts = {}
     },
     {
         'lervag/vimtex',
@@ -326,9 +320,7 @@ require("lazy").setup({
     {
         'numToStr/Comment.nvim',
         lazy = false,
-        config = function()
-            require('Comment').setup()
-        end
+        opts = {}
     },
     {
         "folke/noice.nvim",
