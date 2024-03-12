@@ -3,12 +3,28 @@ import subprocess
 from collections import OrderedDict
 import argparse
 import tempfile
+from dataclasses import dataclass
 
 GREY = '\033[38;5;242m'
 RED = '\033[31m'
 GREEN = '\033[32m'
 BLUE = '\033[34m'
 ENDC = '\033[0m'
+
+@dataclass
+class Pane:
+    pane_id: int
+    window_index: int
+    pane_index: int
+    window_name: str
+    path: str
+    cmd_history: list[str]
+
+@dataclass
+class Session:
+    session_id: int
+    session_name: str
+    panes: list[Pane]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("preview_line", nargs="?")
@@ -18,19 +34,31 @@ def run_cmd(cmd, suppress=False):
     stderr = subprocess.DEVNULL if suppress else None
     return subprocess.check_output(cmd, shell=True, stderr=stderr).decode("utf-8")
 
-def get_lines():
+def get_sessions() -> dict[int, Session]:
     lines = [line.split("|") for line in run_cmd(
         'tmux list-panes -a -F '
-        '"#{pane_id}|#{session_name}|#{window_index}|#{pane_index}|#{window_name}|#{pane_current_path}"'
+        '"#{pane_id}|#{session_name}|#{window_index}|#{pane_index}|#{window_name}|#{pane_current_path}|#{session_id}"'
         ).strip().split("\n")]
+    sessions = {}
     for line in lines:
-        line[0] = line[0][1:] # Remove %
-        line[1] = line[1] or "-"
-        line[4] = line[4] or "-"
-        line[5] = get_git_root(line[5])
-    return lines
+        pane_id = int(line[0][1:]) # Remove %
+        pane = Pane(
+                pane_id = pane_id,
+                window_index = int(line[2]),
+                pane_index = int(line[3]),
+                window_name = line[4] or "-",
+                path = get_git_root(line[5]),
+                cmd_history = get_cmds(pane_id)
+            )
+        session_id = int(line[6][1:]) # Remove $
+        if session_id in sessions:
+            sessions[session_id].panes.append(pane)
+        else:
+            session_name = line[1] or "-"
+            sessions[session_id] = Session(session_id, session_name, [pane])
+    return sessions
 
-def get_cmds(id, number_of_commands=20):
+def get_cmds(id, number_of_commands=10):
     try:
         with open(f"/tmp/tmux_pane_history/{id}") as f:
             # Filter out duplicates
@@ -63,7 +91,7 @@ def pad_and_join(lines):
 def do_fzf(lines):
     joined_lines = pad_and_join(lines)
     options = ("--ansi "
-               "--preview='~/dotfiles/bin/tmux_pane_finder {}' "
+               "--preview='~/dotfiles/bin/tmux_finder {}' "
                "--preview-window=right,wrap "
                "--height=100 "
                "--color='hl:white:underline,hl+:white:underline'")
@@ -78,25 +106,33 @@ def do_fzf(lines):
             return f.read().strip("\n")
 
 if args.preview_line:
-    id = args.preview_line.split(" ")[0]
-    line = list(filter(lambda x: x[0] == id, get_lines()))[0]
-    _, session_name, window_index, pane_index, window_name, path = line
-    cmds = "\n".join(get_cmds(id))
-    print(f"""
-{BLUE}{session_name} {window_index},{pane_index}{ENDC} {GREEN}{window_name}{ENDC} {RED}{path}{ENDC}
-
-{cmds}
-    """.strip())
+    session_id = int(args.preview_line.split(" ")[0])
+    session = get_sessions()[session_id]
+    out = f"{BLUE}{session.session_id} {session.session_name}{ENDC}\n\n"
+    for pane in session.panes:
+        out += f"{GREEN}{pane.window_name}{ENDC} {RED}{pane.path}{ENDC}\n{' '.join(pane.cmd_history)}\n"
+    print(out.strip())
 
 else:
     lines = []
-    for line in get_lines():
-        id, session_name, window_index, pane_index, window_name, path = line
-        cmds = " ".join(get_cmds(id))
-        lines.append([id, f"{BLUE}{session_name} {window_index},{pane_index}{ENDC}", f"{GREEN}{window_name}{ENDC}", f"{RED}{path}{ENDC}", f"{GREY}{cmds}{ENDC}"])
+    for session in get_sessions().values():
+        panes = session.panes
+        paths = list(set(pane.path for pane in panes))
+        windows = list(set(pane.window_name for pane in panes))
+        cmds = set()
+        for pane in panes:
+            for cmd in pane.cmd_history:
+                cmds.add(cmd)
+        cmds = list(cmds)
+        lines.append([
+            f"{BLUE}{session.session_id} {session.session_name}{ENDC}",
+            f"{RED}{' '.join(paths)}{ENDC}",
+            f"{GREEN}{' '.join(windows)}{ENDC}",
+            f"{' '.join(cmds)}",
+            ])
     try:
         line = do_fzf(lines)
-        id = line.split(" ")[0]
-        run_cmd(f"tmux switch-client -t '%{id}'")
+        session_id = line.split(" ")[0]
+        run_cmd(f"tmux switch-client -t '${session_id}'")
     except subprocess.CalledProcessError:
         pass
