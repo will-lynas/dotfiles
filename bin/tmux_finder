@@ -118,6 +118,7 @@ else:
     for session in get_sessions().values():
         panes = session.panes
         paths = list(set(pane.path for pane in panes))
+        paths.sort(key=len)
         windows = list(set(pane.window_name for pane in panes))
         cmds = set()
         for pane in panes:
