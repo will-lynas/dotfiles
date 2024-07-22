@@ -1,0 +1,27 @@
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$fill\
+$python\
+$line_break\
+$character"""
+
+add_newline = false
+
+[git_branch]
+symbol = ''
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+format = '[$all_status$ahead_behind]($style)'
+
+[fill]
+symbol = ' '
+
+[python]
+symbol = ''
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ''
