@@ -1,4 +1,8 @@
-My personal dotfiles
+# Dotfiles
+
+My personal dotfiles, using `kitty`, `tmux`, `zsh`, `starship`, and `neovim`.
+
+This config is written for macOS, but should only need minor modifications to be used elsewhere.
 
 ## Gallery
 
