@@ -110,11 +110,3 @@ vim.keymap.set("n", "<leader>ta", toggle_wrap_all, { desc = "Wrap All" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Diagnostic float" })
-
-vim.keymap.set("n", "<leader>lr", function()
-	vim.print("Restarting LSP ...")
-	vim.cmd("LspRestart")
-end, { desc = "Restart" })
-
-vim.keymap.set("n", "<leader>la", vim.lsp.buf.rename, { desc = "Rename" })
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })

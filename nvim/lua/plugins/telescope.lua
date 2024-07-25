@@ -79,9 +79,5 @@ return {
 		map("<leader>pt", builtin.vim_options, "Options")
 		map("<leader>pm", builtin.man_pages, "Man pages")
 		map("<leader>pr", builtin.resume, "Resume Last State")
-
-		map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
-		map("gr", require("telescope.builtin").lsp_references, "Goto References")
-		map("gi", require("telescope.builtin").lsp_type_definitions, "Goto Type Definition")
 	end,
 }
