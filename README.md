@@ -13,3 +13,42 @@ This config is written for macOS, but should only need minor modifications to be
 ## Font
 
 [`DejaVu Sans Mono Nerd Font`](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/DejaVuSansMNerdFontMono-Regular.ttf)
+
+## Install
+
+1. Currently this repo only supports being cloned to the following location
+
+```sh
+git clone https://github.com/will-lynas/dotfiles.git ~/dotfiles
+```
+
+2.
+
+```sh
+brew install --cask kitty
+brew install tmux starship neovim fzf ripgrep fd
+```
+
+3. This will overwrite any existing config, so make backups if needed
+
+```sh
+mkdir -p ~/.config
+
+ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -sf ~/dotfiles/tmux ~/.config/tmux
+ln -sf ~/dotfiles/nvim ~/.config/nvim
+ln -sf ~/dotfiles/kitty ~/.config/kitty
+ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
+```
+
+4. Install the [font](#font)
+
+5. Launch `kitty`
+
+6. Hit `y` to install `zplug` plugins
+
+7. Launch `tmux`
+
+8. Hit `Ctrl-a` then `I` to install `tpm` plugins
+
+9. Launch neovim (using `vim`) to install neovim plugins
