@@ -10,6 +10,6 @@ This config is written for macOS, but should only need minor modifications to be
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/215aaf98-be7c-468c-a13d-25126b914585">
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/b817f7de-dc4b-4021-a543-68f2b9a4ff17">
 
-### Font
+## Font
 
 [`DejaVu Sans Mono Nerd Font`](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/DejaVuSansMono/Regular/DejaVuSansMNerdFontMono-Regular.ttf)
