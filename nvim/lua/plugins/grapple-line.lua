@@ -3,4 +3,5 @@ return {
 	dependencies = {
 		"cbochs/grapple.nvim",
 	},
+	version = "1.x",
 }
