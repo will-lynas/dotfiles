@@ -1,5 +1,4 @@
 return {
-	name = "grapple-line.nvim",
 	dir = "~/dev/grapple-line.nvim/",
 	dependencies = {
 		"cbochs/grapple.nvim",
