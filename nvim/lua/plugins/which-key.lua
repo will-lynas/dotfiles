@@ -18,6 +18,7 @@ return {
 			["<leader>d"] = { name = "Neotree", _ = "which_key_ignore" },
 			["<leader>i"] = { name = "Tab", _ = "which_key_ignore" },
 			["<leader>o"] = { name = "Grapple", _ = "which_key_ignore" },
+			["<leader>z"] = { name = "Lazy", _ = "which_key_ignore" },
 		})
 	end,
 }

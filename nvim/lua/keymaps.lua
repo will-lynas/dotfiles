@@ -110,3 +110,6 @@ vim.keymap.set("n", "<leader>ta", toggle_wrap_all, { desc = "Wrap All" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Diagnostic float" })
+
+vim.keymap.set("n", "<leader>zo", require("lazy").home, { desc = "Open" })
+vim.keymap.set("n", "<leader>zr", require("lazy").restore, { desc = "Restore" })
