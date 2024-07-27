@@ -19,16 +19,19 @@ return {
 		vim.keymap.set("n", "<leader>or", grapple.reset, { desc = "Reset" })
 
 		vim.keymap.set("n", "<M-q>", function()
-			vim.cmd("Grapple select index=1")
+			require("grapple").select({ index = 1 })
 		end, { desc = "1", silent = true })
+
 		vim.keymap.set("n", "<M-w>", function()
-			vim.cmd("Grapple select index=2")
+			require("grapple").select({ index = 2 })
 		end, { desc = "2", silent = true })
+
 		vim.keymap.set("n", "<M-e>", function()
-			vim.cmd("Grapple select index=3")
+			require("grapple").select({ index = 3 })
 		end, { desc = "3", silent = true })
+
 		vim.keymap.set("n", "<M-r>", function()
-			vim.cmd("Grapple select index=4")
+			require("grapple").select({ index = 4 })
 		end, { desc = "4", silent = true })
 	end,
 }
