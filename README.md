@@ -47,7 +47,7 @@ ln -sf ~/dotfiles/zsh/zshrc ~/.zshrc
 
 6. Hit `y` to install `zplug` plugins
 
-7. Launch `tmux`
+7. Launch `tmux` (you may need to run `tmux kill-server` first to kill any existing tmux sessions)
 
 8. Hit `Ctrl-a` then `I` to install `tpm` plugins
 
