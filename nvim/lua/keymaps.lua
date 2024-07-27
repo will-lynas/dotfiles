@@ -7,7 +7,7 @@ local function toggle_guide()
 end
 
 local function toggle_wrap()
-	vim.opt.wrap = not vim.opt.wrap:get()
+	vim.wo.wrap = not vim.wo.wrap
 end
 
 local function toggle_wrap_all()
