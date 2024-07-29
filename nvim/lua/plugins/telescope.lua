@@ -16,6 +16,9 @@ return {
 					},
 				},
 			},
+			defaults = {
+				layout_strategy = "vertical",
+			},
 		})
 
 		local rg_args = {
