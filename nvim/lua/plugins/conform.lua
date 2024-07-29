@@ -11,6 +11,7 @@ return {
 				javascript = { "prettier" },
 				markdown = { "prettier" },
 				json = { "prettier" },
+				css = { "prettier" },
 			},
 		})
 	end,
