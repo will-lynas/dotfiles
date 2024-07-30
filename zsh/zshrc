@@ -2,7 +2,6 @@ export INSTALL_DIR="$HOME/dotfiles"
 export ZSH_DIR="$INSTALL_DIR/zsh"
 
 source $ZSH_DIR/zplug.zsh
-source $ZSH_DIR/starship.zsh
 source $ZSH_DIR/fzf.zsh
 source $ZSH_DIR/pyenv.zsh
 source $ZSH_DIR/settings.zsh

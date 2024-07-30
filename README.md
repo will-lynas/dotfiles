@@ -1,6 +1,6 @@
 # Dotfiles
 
-My personal dotfiles, using `kitty`, `tmux`, `zsh`, `starship`, and `neovim`.
+My personal dotfiles, using `kitty`, `tmux`, `zsh`, `powerlevel10k`, and `neovim`.
 
 This config is written for macOS, but should only need minor modifications to be used elsewhere.
 
@@ -26,7 +26,7 @@ git clone https://github.com/will-lynas/dotfiles.git ~/dotfiles
 
 ```sh
 brew install --cask kitty
-brew install tmux starship neovim fzf ripgrep fd
+brew install tmux neovim fzf ripgrep fd
 ```
 
 3. This will overwrite any existing config, so make backups if needed
@@ -34,7 +34,6 @@ brew install tmux starship neovim fzf ripgrep fd
 ```sh
 mkdir -p ~/.config
 
-ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -sf ~/dotfiles/tmux ~/.config/tmux
 ln -sf ~/dotfiles/nvim ~/.config/nvim
 ln -sf ~/dotfiles/kitty ~/.config/kitty
