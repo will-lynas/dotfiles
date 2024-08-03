@@ -9,6 +9,7 @@
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
   "gitsigns.nvim": { "branch": "main", "commit": "4a143f13e122ab91abdc88f89eefbe70a4858a56" },
   "grapple-line.nvim": { "branch": "main", "commit": "7bc4551d563e1d0a6227d8222cc078c7176bda33" },
+  "grapple-utils.nvim": { "branch": "main", "commit": "ddbbb25f79f850f6bca9e25a1bf06929889a7787" },
   "grapple.nvim": { "branch": "main", "commit": "7aedc261b05a6c030397c4bc26416efbe746ebf1" },
   "help-vsplit.nvim": { "branch": "master", "commit": "1268670db1bde2276fbfbadb9b12ec0c984ef229" },
   "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
