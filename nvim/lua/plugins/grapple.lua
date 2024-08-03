@@ -13,9 +13,9 @@ return {
 			vim.cmd("Telescope grapple tags")
 		end, { desc = "Grapple" })
 
-		vim.keymap.set("n", "<leader>oa", grapple.toggle, { desc = "Toggle Tag" })
+		vim.keymap.set("n", "<leader>ot", grapple.toggle, { desc = "Toggle Tag" })
 		vim.keymap.set("n", "<leader>om", grapple.toggle_tags, { desc = "Tag Menu" })
-		vim.keymap.set("n", "<leader>os", grapple.toggle_scopes, { desc = "Scopes Menu" })
+		vim.keymap.set("n", "<leader>oc", grapple.toggle_scopes, { desc = "Scopes Menu" })
 		vim.keymap.set("n", "<leader>or", grapple.reset, { desc = "Reset" })
 
 		vim.keymap.set("n", "<M-q>", function()
