@@ -34,6 +34,21 @@ local function toggle_wrap_all()
 	end
 end
 
+local function insert_date()
+	local date_str = tostring(os.date("%Y-%m-%d"))
+	vim.api.nvim_put({ date_str }, "c", false, true)
+end
+
+local function insert_time()
+	local time_str = tostring(os.date("%H:%M:%S"))
+	vim.api.nvim_put({ time_str }, "c", false, true)
+end
+
+local function insert_date_time()
+	local date_time_str = tostring(os.date("%Y-%m-%d %H:%M:%S"))
+	vim.api.nvim_put({ date_time_str }, "c", false, true)
+end
+
 -- Select text that was last pasted
 vim.keymap.set("n", "gp", "`[v`]")
 
@@ -113,3 +128,7 @@ vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Diagnostic float"
 
 vim.keymap.set("n", "<leader>zo", require("lazy").home, { desc = "Open" })
 vim.keymap.set("n", "<leader>zr", require("lazy").restore, { desc = "Restore" })
+
+vim.keymap.set("n", "<leader>ad", insert_date, { desc = "Date" })
+vim.keymap.set("n", "<leader>at", insert_time, { desc = "Time" })
+vim.keymap.set("n", "<leader>al", insert_date_time, { desc = "Date and Time" })

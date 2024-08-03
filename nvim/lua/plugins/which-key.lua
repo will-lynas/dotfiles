@@ -14,6 +14,7 @@ return {
 			{ "<leader>d", group = "Neotree" },
 			{ "<leader>i", group = "Tab" },
 			{ "<leader>o", group = "Grapple" },
+			{ "<leader>a", group = "Insert" },
 		})
 	end,
 }
