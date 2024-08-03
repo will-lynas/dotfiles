@@ -15,4 +15,13 @@ require("settings")
 require("autocmds")
 require("keymaps")
 
-require("lazy").setup("plugins", { change_detection = { notify = false } })
+require("lazy").setup("plugins", {
+	change_detection = {
+		notify = false,
+	},
+	dev = {
+		path = require("paths").dev,
+		patterns = { "grapple-line.nvim", "grapple-utils.nvim" },
+		fallback = true,
+	},
+})
