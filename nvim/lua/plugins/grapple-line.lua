@@ -1,5 +1,5 @@
 return {
-	dir = "~/dev/grapple-line.nvim/",
+	dir = require("paths").dev .. "/grapple-line.nvim",
 	dependencies = {
 		"cbochs/grapple.nvim",
 	},
