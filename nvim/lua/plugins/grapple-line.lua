@@ -18,6 +18,6 @@ return {
 		-- Accepted values:
 		-- "none" - overflowing files are ignored
 		-- "ellipsis" - if there are overflowing files an ellipsis will be shown
-		overflow = "none",
+		overflow = "ellipsis",
 	},
 }
