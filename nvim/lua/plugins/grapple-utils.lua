@@ -3,5 +3,8 @@ return {
 	dependencies = {
 		"cbochs/grapple.nvim",
 	},
-	opts = {},
+	config = function()
+		local utils = require("grapple-utils")
+		vim.keymap.set("n", "<leader>oe", utils.move_to_end, { desc = "Move To End" })
+	end,
 }
