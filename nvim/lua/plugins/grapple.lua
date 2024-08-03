@@ -33,5 +33,9 @@ return {
 		vim.keymap.set("n", "<leader>of", function()
 			require("grapple").select({ index = 4 })
 		end, { desc = "4", silent = true })
+
+		vim.keymap.set("n", "<leader>og", function()
+			require("grapple").select({ index = 5 })
+		end, { desc = "4", silent = true })
 	end,
 }
