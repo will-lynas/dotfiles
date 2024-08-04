@@ -6,12 +6,15 @@ return {
 	config = function()
 		local gitlinker = require("gitlinker")
 
-		gitlinker.setup({ mappings = nil })
-
 		local git_link_opts = {
 			keybind = "<leader>sg",
 			desc = "Copy Git Link",
 		}
+
+		-- Workaround:
+		-- If mappings is nil then the default mapping is used (bad)
+		-- So we pass in a keybind and then immediately overwrite it
+		gitlinker.setup({ mappings = git_link_opts.keybind })
 
 		vim.keymap.set("n", git_link_opts.keybind, function()
 			gitlinker.get_buf_range_url("n")
