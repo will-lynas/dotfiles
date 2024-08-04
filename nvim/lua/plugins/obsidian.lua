@@ -31,6 +31,13 @@ return {
 			end,
 			desc = "New",
 		},
+		{
+			"<leader>mt",
+			function()
+				vim.cmd("ObsidianTags")
+			end,
+			desc = "Tags",
+		},
 	},
 	opts = {
 		workspaces = {
