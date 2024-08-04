@@ -16,6 +16,7 @@ return {
 			{ "<leader>o", group = "Grapple" },
 			{ "<leader>a", group = "Insert" },
 			{ "<leader>m", group = "Obsidian" },
+			{ "<leader>f", group = "Misc" },
 		})
 	end,
 }

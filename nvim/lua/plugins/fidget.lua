@@ -13,5 +13,12 @@ return {
 				},
 			},
 		})
+
+		vim.keymap.set(
+			"n",
+			"<leader>fh",
+			[[:lua require("fidget").notification.show_history()<CR>]],
+			{ desc = "Fidget History" }
+		)
 	end,
 }
