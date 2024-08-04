@@ -11,3 +11,5 @@ source $ZSH_DIR/rust.zsh
 
 # Enable autocompletion
 autoload -Uz compinit && compinit
+
+source $ZSH_DIR/zoxide.zsh
