@@ -63,5 +63,9 @@ return {
 				end,
 			},
 		})
+
+		vim.keymap.set("n", "<leader>li", function()
+			vim.cmd("LspInfo")
+		end, { desc = "Info" })
 	end,
 }
