@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 return {
 	"will-lynas/grapple-utils.nvim",
 	dependencies = {
