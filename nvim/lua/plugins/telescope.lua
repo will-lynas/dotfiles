@@ -66,8 +66,6 @@ return {
 			local git_root = utils.git_root_of_current_file()
 			if git_root then
 				builtin.find_files({ cwd = git_root })
-			else
-				vim.notify("File is not in a git repo", vim.log.levels.ERROR)
 			end
 		end
 
@@ -75,8 +73,6 @@ return {
 			local git_root = utils.git_root_of_current_file()
 			if git_root then
 				builtin.live_grep({ cwd = git_root })
-			else
-				vim.notify("File is not in a git repo", vim.log.levels.ERROR)
 			end
 		end
 

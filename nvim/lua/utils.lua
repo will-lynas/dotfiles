@@ -42,23 +42,33 @@ function M.toggle_value_in_table(value, t)
 	end
 end
 
----@param filepath string?
+---@class GitRootArgs
+---@field filepath string? Path of the file to find the git root of
+---@field notify boolean? Notify if the file is not in a git repo (default: true)
+
+---@param args GitRootArgs
 ---@return string?
-function M.get_git_root(filepath)
-	local path = vim.fn.fnamemodify(filepath or "", ":h")
+function M.get_git_root(args)
+	local notify = args.notify ~= false
+	local path = vim.fn.fnamemodify(args.filepath or "", ":h")
+
 	local command = string.format("git -C %s rev-parse --show-toplevel 2>/dev/null", path)
 	local handle = assert(io.popen(command))
 	local git_root = handle:read("*a"):gsub("\n", "")
 	handle:close()
+
 	if git_root ~= "" then
 		return git_root
+	elseif notify then
+		vim.notify("File is not in a git repo", vim.log.levels.ERROR)
 	end
 end
 
+---@param notify boolean? Notify if the current file is not in a git repo (default: true)
 ---@return string?
-function M.git_root_of_current_file()
+function M.git_root_of_current_file(notify)
 	local filepath = vim.fn.expand("%:p")
-	return M.get_git_root(filepath)
+	return M.get_git_root({ filepath = filepath, notify = notify ~= false })
 end
 
 return M

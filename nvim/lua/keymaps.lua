@@ -41,8 +41,6 @@ local function open_new_tab_with_git_root()
 		vim.cmd("tabnew %")
 		vim.cmd("tcd " .. git_root)
 		vim.notify("Tab working directory set to " .. git_root, vim.log.levels.INFO)
-	else
-		vim.notify("File is not in a git repo", vim.log.levels.ERROR)
 	end
 end
 
