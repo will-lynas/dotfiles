@@ -43,8 +43,8 @@ function M.toggle_value_in_table(value, t)
 end
 
 ---@class GitRootArgs
----@field filepath string? Path of the file to find the git root of
----@field notify boolean? Notify if the file is not in a git repo (default: true)
+---@field filepath string?
+---@field notify boolean?
 
 ---@param args GitRootArgs
 ---@return string?
@@ -64,7 +64,7 @@ function M.get_git_root(args)
 	end
 end
 
----@param notify boolean? Notify if the current file is not in a git repo (default: true)
+---@param notify boolean?
 ---@return string?
 function M.git_root_of_current_file(notify)
 	local filepath = vim.fn.expand("%:p")
