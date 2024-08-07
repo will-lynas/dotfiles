@@ -1,5 +1,8 @@
 local M = {}
 
+---@param t1 any[]
+---@param t2 any[]
+---@return any[]
 function M.join_arrays(t1, t2)
 	local result = {}
 
@@ -14,6 +17,9 @@ function M.join_arrays(t1, t2)
 	return result
 end
 
+---@param seq any[]
+---@param elem any
+---@return integer?
 function M.index(seq, elem)
 	for i, v in ipairs(seq) do
 		if v == elem then
@@ -24,6 +30,8 @@ function M.index(seq, elem)
 	return nil
 end
 
+---@param value any
+---@param t any[]
 function M.toggle_value_in_table(value, t)
 	local i = M.index(t, value)
 
@@ -34,6 +42,7 @@ function M.toggle_value_in_table(value, t)
 	end
 end
 
+---@return string?
 function M.get_git_root()
 	local handle = assert(io.popen("git rev-parse --show-toplevel 2>/dev/null"))
 	local git_root = handle:read("*a"):gsub("\n", "")
