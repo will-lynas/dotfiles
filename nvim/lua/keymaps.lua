@@ -1,5 +1,6 @@
+local utils = require("utils")
+
 local function toggle_guide()
-	local utils = require("utils")
 	local width = "120"
 	local cc_table = vim.opt.cc:get()
 	utils.toggle_value_in_table(width, cc_table)
@@ -31,6 +32,18 @@ local function toggle_wrap_all()
 		vim.api.nvim_win_call(win, function()
 			vim.wo.wrap = not any_wrapped
 		end)
+	end
+end
+
+local function open_new_tab_with_git_root()
+	local filepath = vim.fn.expand("%:p")
+	local git_root = utils.get_git_root(filepath)
+	if git_root then
+		vim.cmd("tabnew %")
+		vim.cmd("tcd " .. git_root)
+		vim.notify("Tab working directory set to " .. git_root, vim.log.levels.INFO)
+	else
+		vim.notify("File is not in a git repo", vim.log.levels.ERROR)
 	end
 end
 
@@ -128,3 +141,5 @@ end, { desc = "Time" })
 vim.keymap.set("n", "<leader>al", function()
 	insert_date("%Y-%m-%d %H:%M:%S")
 end, { desc = "Date and Time" })
+
+vim.keymap.set("n", "<leader>ig", open_new_tab_with_git_root, { desc = "New Tab With Git Root" })
