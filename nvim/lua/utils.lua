@@ -34,4 +34,11 @@ function M.toggle_value_in_table(value, t)
 	end
 end
 
+function M.get_git_root()
+	local handle = assert(io.popen("git rev-parse --show-toplevel 2>/dev/null"))
+	local git_root = handle:read("*a"):gsub("\n", "")
+	handle:close()
+	return git_root
+end
+
 return M
