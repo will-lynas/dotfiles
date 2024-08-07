@@ -36,8 +36,7 @@ local function toggle_wrap_all()
 end
 
 local function open_new_tab_with_git_root()
-	local filepath = vim.fn.expand("%:p")
-	local git_root = utils.get_git_root(filepath)
+	local git_root = utils.git_root_of_current_file()
 	if git_root then
 		vim.cmd("tabnew %")
 		vim.cmd("tcd " .. git_root)

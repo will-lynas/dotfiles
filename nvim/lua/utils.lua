@@ -55,4 +55,10 @@ function M.get_git_root(filepath)
 	end
 end
 
+---@return string?
+function M.git_root_of_current_file()
+	local filepath = vim.fn.expand("%:p")
+	return M.get_git_root(filepath)
+end
+
 return M
