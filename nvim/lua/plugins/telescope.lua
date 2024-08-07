@@ -62,6 +62,24 @@ return {
 			})
 		end
 
+		local function find_in_git_root()
+			local git_root = utils.git_root_of_current_file()
+			if git_root then
+				builtin.find_files({ cwd = git_root })
+			else
+				vim.notify("File is not in a git repo", vim.log.levels.ERROR)
+			end
+		end
+
+		local function grep_in_git_root()
+			local git_root = utils.git_root_of_current_file()
+			if git_root then
+				builtin.live_grep({ cwd = git_root })
+			else
+				vim.notify("File is not in a git repo", vim.log.levels.ERROR)
+			end
+		end
+
 		local function diagnostics()
 			builtin.diagnostics({ bufnr = 0 })
 		end
@@ -82,5 +100,7 @@ return {
 		map("<leader>pt", builtin.vim_options, "Options")
 		map("<leader>pm", builtin.man_pages, "Man pages")
 		map("<leader>pr", builtin.resume, "Resume Last State")
+		map("<leader>pc", find_in_git_root, "Find in Git Root")
+		map("<leader>pe", grep_in_git_root, "Grep in Git Root")
 	end,
 }
