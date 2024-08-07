@@ -42,9 +42,12 @@ function M.toggle_value_in_table(value, t)
 	end
 end
 
+---@param filepath string?
 ---@return string?
-function M.get_git_root()
-	local handle = assert(io.popen("git rev-parse --show-toplevel 2>/dev/null"))
+function M.get_git_root(filepath)
+	local path = vim.fn.fnamemodify(filepath or "", ":h")
+	local command = string.format("git -C %s rev-parse --show-toplevel 2>/dev/null", path)
+	local handle = assert(io.popen(command))
 	local git_root = handle:read("*a"):gsub("\n", "")
 	handle:close()
 	if git_root ~= "" then
