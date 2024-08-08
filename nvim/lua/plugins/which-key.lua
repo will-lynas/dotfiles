@@ -19,5 +19,9 @@ return {
 			{ "<leader>f", group = "Misc", mode = "nv" },
 			{ "<leader>w", group = "MiniTest", mode = "nv" },
 		})
+
+		require("which-key").setup({
+			icons = { mappings = false },
+		})
 	end,
 }
