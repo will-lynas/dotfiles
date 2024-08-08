@@ -3,6 +3,7 @@ return {
 	event = "VeryLazy",
 	config = function()
 		require("which-key").setup({
+			preset = "helix",
 			icons = { mappings = false },
 		})
 
