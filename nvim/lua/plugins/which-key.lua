@@ -5,6 +5,7 @@ return {
 		require("which-key").setup({
 			preset = "helix",
 			icons = { mappings = false },
+			show_help = false,
 		})
 
 		require("which-key").add({
