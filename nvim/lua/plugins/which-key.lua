@@ -2,6 +2,10 @@ return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
 	config = function()
+		require("which-key").setup({
+			icons = { mappings = false },
+		})
+
 		require("which-key").add({
 			{ "<leader>z", group = "Lazy", mode = "nv" },
 			{ "<leader>p", group = "Telescope", mode = "nv" },
@@ -18,10 +22,6 @@ return {
 			{ "<leader>m", group = "Obsidian", mode = "nv" },
 			{ "<leader>f", group = "Misc", mode = "nv" },
 			{ "<leader>w", group = "MiniTest", mode = "nv" },
-		})
-
-		require("which-key").setup({
-			icons = { mappings = false },
 		})
 	end,
 }
