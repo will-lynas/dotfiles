@@ -3,7 +3,6 @@ return {
 	config = function()
 		local notification_config = vim.deepcopy(require("fidget.notification").default_config)
 		notification_config.icon = ""
-		notification_config.ttl = 16
 
 		require("fidget").setup({
 			notification = {
