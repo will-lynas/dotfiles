@@ -34,6 +34,13 @@ return {
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "Hover Documentation" })
 
 			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>lc",
+				vim.lsp.buf.code_action,
+				{ buffer = bufnr, desc = "Code Action" }
+			)
+
+			vim.keymap.set(
 				"n",
 				"gd",
 				require("telescope.builtin").lsp_definitions,
