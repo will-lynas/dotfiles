@@ -13,6 +13,10 @@ return {
 			auto_show_console = false,
 			remember_settings = false,
 			console_timeout = 10000,
+			integrations = {
+				-- For some reason setting this to false enables telescope
+				telescope = false,
+			},
 		})
 
 		vim.keymap.set("n", ";", neogit.open, { desc = "Status" })
