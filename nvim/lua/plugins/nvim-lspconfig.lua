@@ -26,7 +26,7 @@ return {
 
 		local function on_attach(_, bufnr)
 			vim.keymap.set("n", "<leader>lr", function()
-				vim.print("Restarting LSP ...")
+				vim.notify("Restarting LSP ...")
 				vim.cmd("LspRestart")
 			end, { desc = "Restart" })
 
