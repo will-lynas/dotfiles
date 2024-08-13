@@ -5,10 +5,7 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lsp",
 		"neovim/nvim-lspconfig",
-		{
-			"L3MON4D3/LuaSnip",
-			tag = "v2.*",
-		},
+		"L3MON4D3/LuaSnip",
 	},
 	config = function()
 		local cmp = require("cmp")
