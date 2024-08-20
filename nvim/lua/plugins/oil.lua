@@ -4,6 +4,6 @@ return {
 	config = function()
 		require("oil").setup()
 
-		vim.keymap.set("n", "<leader>do", require("oil").toggle_float)
+		vim.keymap.set("n", "<leader>j", require("oil").open, { desc = "Oil" })
 	end,
 }
