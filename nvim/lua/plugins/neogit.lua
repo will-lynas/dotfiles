@@ -20,11 +20,5 @@ return {
 		})
 
 		vim.keymap.set("n", ";", neogit.open, { desc = "Status" })
-
-		vim.keymap.set("n", "<leader>fc", function()
-			local format = "%Y-%m-%d %H:%M:%S"
-			local msg = tostring(os.date(format))
-			neogit.action("commit", "commit", { "--all", "-m", msg })()
-		end, { desc = "Commit with Current Time" })
 	end,
 }
