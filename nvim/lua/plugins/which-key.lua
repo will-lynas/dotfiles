@@ -17,7 +17,6 @@ return {
 			{ "<leader>h", group = "Hunk", mode = "nv" },
 			{ "<leader>t", group = "Toggle", mode = "nv" },
 			{ "<leader>l", group = "LSP", mode = "nv" },
-			{ "<leader>d", group = "Neotree", mode = "nv" },
 			{ "<leader>i", group = "Tab", mode = "nv" },
 			{ "<leader>o", group = "Grapple", mode = "nv" },
 			{ "<leader>a", group = "Insert", mode = "nv" },
