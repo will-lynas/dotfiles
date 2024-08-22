@@ -4,6 +4,10 @@ return {
 	config = function()
 		require("oil").setup()
 
-		vim.keymap.set("n", "<leader>j", require("oil").open, { desc = "Oil" })
+		vim.keymap.set("n", "<leader>jo", require("oil").open, { desc = "Open" })
+		vim.keymap.set("n", "<leader>jk", require("oil").close, { desc = "Close" })
+		vim.keymap.set("n", "<leader>jd", function()
+			require("oil").open(vim.fn.getcwd())
+		end, { desc = "Open in CWD" })
 	end,
 }

@@ -23,6 +23,7 @@ return {
 			{ "<leader>m", group = "Obsidian", mode = "nv" },
 			{ "<leader>f", group = "Misc", mode = "nv" },
 			{ "<leader>w", group = "MiniTest", mode = "nv" },
+			{ "<leader>j", group = "Oil", mode = "nv" },
 		})
 	end,
 }
