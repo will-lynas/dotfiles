@@ -4,6 +4,8 @@ else
   export TERM="xterm-kitty"
 fi
 
+export EDITOR=nvim
+
 export PATH="$PATH:$INSTALL_DIR/bin/"
 typeset -U path
 
