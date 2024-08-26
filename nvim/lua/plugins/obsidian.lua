@@ -48,6 +48,7 @@ return {
 		},
 		daily_notes = {
 			folder = paths.obsidian.daily,
+			default_tags = {},
 		},
 		completion = {
 			min_chars = 1,
