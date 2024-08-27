@@ -3,6 +3,8 @@ return {
 	config = function()
 		local conform = require("conform")
 		conform.setup({
+			-- TODO: fix this disable
+			---@diagnostic disable-next-line
 			format_on_save = true,
 			formatters_by_ft = {
 				lua = { "stylua" },
