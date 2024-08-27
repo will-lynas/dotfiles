@@ -17,5 +17,8 @@ return {
 				html = { "prettier" },
 			},
 		})
+		vim.keymap.set("n", "<leader>fc", function()
+			vim.cmd("ConformInfo")
+		end, { desc = "Conform Info" })
 	end,
 }
