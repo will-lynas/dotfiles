@@ -8,6 +8,7 @@ source $ZSH_DIR/settings.zsh
 source $ZSH_DIR/aliases.zsh
 source $ZSH_DIR/tpm.zsh
 source $ZSH_DIR/rust.zsh
+source $ZSH_DIR/secrets.zsh
 
 # Enable autocompletion
 autoload -Uz compinit && compinit

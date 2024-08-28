@@ -24,6 +24,7 @@ return {
 			{ "<leader>f", group = "Misc", mode = "nv" },
 			{ "<leader>w", group = "MiniTest", mode = "nv" },
 			{ "<leader>j", group = "Oil", mode = "nv" },
+			{ "<leader>;", group = "Avante", mode = "nv" },
 		})
 	end,
 }

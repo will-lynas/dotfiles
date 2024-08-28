@@ -1,0 +1,6 @@
+ENV_VAR_NAME="ANTHROPIC_API_KEY"
+FILE_PATH="$INSTALL_DIR/secrets/$ENV_VAR_NAME"
+
+if [[ -f $FILE_PATH ]]; then
+    export $ENV_VAR_NAME=$(<"$FILE_PATH")
+fi
