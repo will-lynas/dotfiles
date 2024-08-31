@@ -40,6 +40,9 @@ return {
 				debug = "<leader>;d",
 				hint = "<leader>;h",
 			},
+			submit = {
+				insert = "<C-c>",
+			},
 		},
 	},
 }
