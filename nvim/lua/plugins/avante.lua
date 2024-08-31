@@ -44,5 +44,8 @@ return {
 				insert = "<C-c>",
 			},
 		},
+		hints = {
+			enabled = false,
+		},
 	},
 }
