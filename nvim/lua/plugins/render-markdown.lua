@@ -1,6 +1,7 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
 	-- TODO: make this work on cmp docs
+	ft = { "markdown", "Avante" },
 	opts = {
 		-- TODO: do something about this circular dep
 		file_types = { "markdown", "Avante" },
