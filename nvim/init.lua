@@ -1,4 +1,7 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+-- TODO: fix this disable for fs_stat
+---@diagnostic disable-next-line
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
