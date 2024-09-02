@@ -9,6 +9,7 @@ return {
 		"MunifTanjim/nui.nvim",
 		"nvim-tree/nvim-web-devicons",
 		"zbirenbaum/copilot.lua",
+		"MeanderingProgrammer/render-markdown.nvim",
 		{
 			"HakonHarnes/img-clip.nvim",
 			event = "VeryLazy",
@@ -22,13 +23,6 @@ return {
 					use_absolute_path = true,
 				},
 			},
-		},
-		{
-			"MeanderingProgrammer/render-markdown.nvim",
-			opts = {
-				file_types = { "markdown", "Avante" },
-			},
-			ft = { "markdown", "Avante" },
 		},
 	},
 	opts = {
