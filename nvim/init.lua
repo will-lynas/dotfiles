@@ -15,6 +15,7 @@ require("settings")
 require("autocmds")
 require("keymaps")
 
+-- TODO: split out lazy into file
 require("lazy").setup("plugins", {
 	change_detection = {
 		notify = false,
