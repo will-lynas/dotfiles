@@ -9,6 +9,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				rust = { "rustfmt" },
+				-- TODO: reduce repetition
 				typescript = { "prettier" },
 				javascript = { "prettier" },
 				markdown = { "prettier" },
