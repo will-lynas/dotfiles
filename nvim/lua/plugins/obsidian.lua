@@ -51,6 +51,8 @@ return {
 				folder = paths.obsidian.daily,
 				default_tags = {},
 			},
+			---FIXME:
+			---@diagnostic disable-next-line
 			completion = {
 				min_chars = 1,
 			},
