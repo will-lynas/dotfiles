@@ -105,5 +105,15 @@ return {
 			open_app_foreground = true,
 			ui = { enable = false },
 		})
+
+		local augroup = vim.api.nvim_create_augroup("markdownSettings", { clear = true })
+
+		vim.api.nvim_create_autocmd("FileType", {
+			group = augroup,
+			pattern = "markdown",
+			callback = function()
+				vim.opt_local.conceallevel = 2
+			end,
+		})
 	end,
 }
