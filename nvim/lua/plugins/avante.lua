@@ -48,9 +48,10 @@ return {
 
 		vim.api.nvim_create_autocmd("FileType", {
 			group = avante_group,
-			pattern = "Avante",
+			pattern = { "Avante", "AvanteInput" },
 			callback = function()
 				vim.opt_local.breakindent = false
+				vim.opt_local.wrap = true
 			end,
 		})
 	end,
