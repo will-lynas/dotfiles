@@ -43,5 +43,15 @@ return {
 				enabled = false,
 			},
 		})
+
+		local avante_group = vim.api.nvim_create_augroup("AvanteSettings", {})
+
+		vim.api.nvim_create_autocmd("FileType", {
+			group = avante_group,
+			pattern = "Avante",
+			callback = function()
+				vim.opt_local.breakindent = false
+			end,
+		})
 	end,
 }
