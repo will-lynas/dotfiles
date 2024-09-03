@@ -100,5 +100,6 @@ return {
 		end,
 
 		open_app_foreground = true,
+		ui = { enable = false },
 	},
 }
