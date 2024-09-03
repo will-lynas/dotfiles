@@ -39,67 +39,69 @@ return {
 			desc = "Tags",
 		},
 	},
-	opts = {
-		workspaces = {
-			{
-				name = "personal",
-				path = paths.obsidian.vault,
+	config = function()
+		require("obsidian").setup({
+			workspaces = {
+				{
+					name = "personal",
+					path = paths.obsidian.vault,
+				},
 			},
-		},
-		daily_notes = {
-			folder = paths.obsidian.daily,
-			default_tags = {},
-		},
-		completion = {
-			min_chars = 1,
-		},
-		mappings = {
-			["gf"] = {
-				action = function()
-					return require("obsidian").util.gf_passthrough()
-				end,
-				opts = { noremap = false, expr = true, buffer = true },
+			daily_notes = {
+				folder = paths.obsidian.daily,
+				default_tags = {},
 			},
-			["<leader>mb"] = {
-				action = function()
-					vim.cmd("ObsidianBacklinks")
-				end,
-				opts = { desc = "Backlinks" },
+			completion = {
+				min_chars = 1,
 			},
-			["<leader>ml"] = {
-				action = function()
-					vim.cmd("ObsidianLinks")
-				end,
-				opts = { desc = "Links" },
+			mappings = {
+				["gf"] = {
+					action = function()
+						return require("obsidian").util.gf_passthrough()
+					end,
+					opts = { noremap = false, expr = true, buffer = true },
+				},
+				["<leader>mb"] = {
+					action = function()
+						vim.cmd("ObsidianBacklinks")
+					end,
+					opts = { desc = "Backlinks" },
+				},
+				["<leader>ml"] = {
+					action = function()
+						vim.cmd("ObsidianLinks")
+					end,
+					opts = { desc = "Links" },
+				},
+				["<leader>mo"] = {
+					action = function()
+						vim.cmd("ObsidianOpen")
+					end,
+					opts = { desc = "Open in Obsidian" },
+				},
+				["<leader>mr"] = {
+					action = function()
+						vim.cmd("ObsidianRename")
+					end,
+					opts = { desc = "Rename" },
+				},
 			},
-			["<leader>mo"] = {
-				action = function()
-					vim.cmd("ObsidianOpen")
-				end,
-				opts = { desc = "Open in Obsidian" },
-			},
-			["<leader>mr"] = {
-				action = function()
-					vim.cmd("ObsidianRename")
-				end,
-				opts = { desc = "Rename" },
-			},
-		},
 
-		wiki_link_func = "use_alias_only",
+			wiki_link_func = "use_alias_only",
 
-		note_path_func = function(spec)
-			local path = spec.dir / spec.title
-			return path:with_suffix(".md")
-		end,
+			note_path_func = function(spec)
+				local path = spec.dir / spec.title
+				return path:with_suffix(".md")
+			end,
 
-		new_notes_location = "notes_subdir",
+			new_notes_location = "notes_subdir",
 
-		note_id_func = function(title)
-			return title
-		end,
+			note_id_func = function(title)
+				return title
+			end,
 
-		open_app_foreground = true,
-		ui = { enable = false },
-	},
+			open_app_foreground = true,
+			ui = { enable = false },
+		})
+	end,
 }
