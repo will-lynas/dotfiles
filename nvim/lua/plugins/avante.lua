@@ -25,21 +25,23 @@ return {
 			},
 		},
 	},
-	opts = {
-		mappings = {
-			ask = "<leader>;a",
-			edit = "<leader>;e",
-			refresh = "<leader>;r",
-			toggle = {
-				debug = "<leader>;d",
-				hint = "<leader>;h",
+	config = function()
+		require("avante").setup({
+			mappings = {
+				ask = "<leader>;a",
+				edit = "<leader>;e",
+				refresh = "<leader>;r",
+				toggle = {
+					debug = "<leader>;d",
+					hint = "<leader>;h",
+				},
+				submit = {
+					insert = "<C-c>",
+				},
 			},
-			submit = {
-				insert = "<C-c>",
+			hints = {
+				enabled = false,
 			},
-		},
-		hints = {
-			enabled = false,
-		},
-	},
+		})
+	end,
 }
