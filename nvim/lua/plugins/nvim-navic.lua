@@ -39,9 +39,9 @@ return {
 		vim.keymap.set("n", "<leader>lb", function()
 			local text = navic.get_location()
 			if #text == 0 then
-				vim.print("LSP not loaded")
+				vim.notify("LSP not loaded")
 			else
-				vim.print(text)
+				vim.notify(text)
 			end
 		end, { desc = "Breadcrumbs" })
 	end,
