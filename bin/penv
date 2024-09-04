@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# vim: filetype=bash
+
+# TODO: check these commands exist before running
+
+nvim_command="nvim -v"
+sw_vers_command="sw_vers"
+
+run_command() {
+    local cmd="$1"
+    echo '```'
+    echo "$cmd"
+    echo
+    $cmd
+    echo '```'
+}
+
+result=$(
+    run_command "$nvim_command"
+    echo
+    run_command "$sw_vers_command"
+)
+
+echo "$result"
+echo "$result" | pbcopy
+
+echo
+echo "Result written to clipboard :)"
