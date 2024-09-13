@@ -18,6 +18,9 @@ return {
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
 			callback = function(args)
+				local cursor_pos = vim.fn.getcurpos()
+				vim.cmd("normal! gg=G")
+				vim.fn.setpos(".", cursor_pos)
 				conform.format({ bufnr = args.buf })
 			end,
 		})
