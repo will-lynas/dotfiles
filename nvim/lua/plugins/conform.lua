@@ -12,11 +12,16 @@ return {
 	config = function()
 		local conform = require("conform")
 		conform.setup({
-			-- TODO: fix this disable
-			---@diagnostic disable-next-line
-			format_on_save = true,
 			formatters_by_ft = formatters,
 		})
+
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*",
+			callback = function(args)
+				conform.format({ bufnr = args.buf })
+			end,
+		})
+
 		vim.keymap.set("n", "<leader>fc", function()
 			vim.cmd("ConformInfo")
 		end, { desc = "Conform Info" })
