@@ -22,6 +22,14 @@ return {
 					},
 				},
 			},
+			tailwindcss = {
+				filetypes = { "html", "css", "javascript", "typescript", "rust" },
+				init_options = {
+					userLanguages = {
+						rust = "html",
+					},
+				},
+			},
 		}
 
 		local function on_attach(_, bufnr)
