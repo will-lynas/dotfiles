@@ -6,6 +6,7 @@ return {
 		local telescope = require("telescope")
 		local builtin = require("telescope.builtin")
 		local actions = require("telescope.actions")
+		local action_state = require("telescope.actions.state")
 		local utils = require("utils")
 
 		telescope.setup({
@@ -98,6 +99,17 @@ return {
 		map("<leader>pr", builtin.resume, "Resume Last State")
 		map("<leader>pc", find_in_git_root, "Find in Git Root")
 		map("<leader>pe", grep_in_git_root, "Grep in Git Root")
-		map("<leader>pi", builtin.git_bcommits, "Buffer Commits")
+		map("<leader>pi", function()
+			require("telescope.builtin").git_bcommits({
+				attach_mappings = function(prompt_bufnr, map)
+					actions.select_default:replace(function()
+						actions.close(prompt_bufnr)
+						local selection = action_state.get_selected_entry()
+						vim.cmd("DiffviewOpen " .. selection.value .. "^.." .. selection.value)
+					end)
+					return true
+				end,
+			})
+		end, "Buffer Commits")
 	end,
 }
