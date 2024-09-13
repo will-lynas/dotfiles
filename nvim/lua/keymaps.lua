@@ -102,9 +102,15 @@ end, { desc = "Python" })
 vim.keymap.set("n", "<leader>in", function()
 	vim.cmd("tabnew")
 end, { desc = "New" })
+
 vim.keymap.set("n", "<leader>iq", function()
-	vim.cmd("tabclose")
+	if #vim.api.nvim_list_tabpages() > 1 then
+		vim.cmd("tabclose")
+	else
+		vim.notify("Cannot close the last tab", vim.log.levels.ERROR)
+	end
 end, { desc = "Close" })
+
 vim.keymap.set("n", "<M-1>", function()
 	vim.cmd("silent! tabn 1")
 end, { desc = "1" })
