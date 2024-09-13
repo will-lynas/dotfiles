@@ -4,3 +4,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "help",
+	callback = function()
+		if vim.fn.win_gettype() ~= "tab" then
+			vim.cmd("wincmd T")
+		end
+	end,
+})
