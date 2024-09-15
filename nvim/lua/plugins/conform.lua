@@ -3,7 +3,7 @@ local formatters = {
 	rust = { "rustfmt" },
 }
 
-for _, filetype in ipairs({ "typescript", "javascript", "markdown", "json", "css", "html" }) do
+for _, filetype in ipairs({ "typescript", "javascript", "markdown", "json", "css", "html", "htmldjango" }) do
 	formatters[filetype] = { "prettier" }
 end
 
