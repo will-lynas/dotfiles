@@ -23,7 +23,7 @@ return {
 				},
 			},
 			tailwindcss = {
-				filetypes = { "html", "css", "javascript", "typescript" },
+				filetypes = { "html", "htmldjango", "css", "javascript", "typescript" },
 			},
 		}
 
