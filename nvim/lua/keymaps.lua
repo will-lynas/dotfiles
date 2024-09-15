@@ -148,3 +148,6 @@ end, { desc = "Date and Time" })
 vim.keymap.set("n", "<leader>ig", open_new_tab_with_git_root, { desc = "New Tab With Git Root" })
 
 vim.keymap.set("n", "<leader>fj", "ggVG", { desc = "Select Whole Buffer" })
+vim.keymap.set("n", "<leader>fm", function()
+	vim.cmd("delmarks!")
+end, { desc = "Delmarks" })
