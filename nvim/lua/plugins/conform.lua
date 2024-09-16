@@ -1,6 +1,7 @@
 local formatters = {
 	lua = { "stylua" },
 	rust = { "rustfmt" },
+	go = { "gofmt" },
 }
 
 for _, filetype in ipairs({ "typescript", "javascript", "markdown", "json", "css", "html", "htmldjango" }) do
