@@ -151,3 +151,7 @@ vim.keymap.set("n", "<leader>fj", "ggVG", { desc = "Select Whole Buffer" })
 vim.keymap.set("n", "<leader>fm", function()
 	vim.cmd("delmarks!")
 end, { desc = "Delmarks" })
+
+vim.keymap.set("n", "<leader>sc", function()
+	vim.fn.setreg("+", vim.fn.getreg('"'))
+end, { desc = "Transfer to clipbord" })
