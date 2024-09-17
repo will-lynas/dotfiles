@@ -154,4 +154,5 @@ end, { desc = "Delmarks" })
 
 vim.keymap.set("n", "<leader>sc", function()
 	vim.fn.setreg("+", vim.fn.getreg('"'))
+	vim.notify('Copied " to +')
 end, { desc = "Transfer to clipbord" })
