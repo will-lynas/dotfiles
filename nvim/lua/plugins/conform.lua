@@ -4,7 +4,7 @@ local formatters = {
 	go = { "gofmt" },
 }
 
-for _, filetype in ipairs({ "typescript", "javascript", "markdown", "json", "css", "html", "htmldjango" }) do
+for _, filetype in ipairs({ "typescript", "javascript", "markdown", "json", "css", "html", "htmldjango", "yaml" }) do
 	formatters[filetype] = { "prettier" }
 end
 
