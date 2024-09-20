@@ -32,5 +32,20 @@ return {
 			local url = gitlinker.get_repo_url({ action_callback = nil, print_url = false })
 			os.execute('open "' .. url .. '"')
 		end, { desc = "Open Git Repo in Browser" })
+
+		vim.keymap.set("n", "<leader>fa", function()
+			local handle = io.popen('gh run list --limit 1 --json url --jq ".[0].url"')
+			if not handle then
+				return
+			end
+			local url = handle:read("*a")
+			handle:close()
+
+			url = url:gsub("%s+", "")
+
+			if url and url ~= "" then
+				os.execute('open "' .. url .. '"')
+			end
+		end, { desc = "Open last GH action in browser" })
 	end,
 }
