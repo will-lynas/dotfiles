@@ -183,3 +183,8 @@ vim.keymap.set("n", "<leader>fo", function()
 		vim.notify("'browser_path' file not found", vim.log.levels.ERROR)
 	end
 end, { desc = "Open link from browser_path" })
+
+vim.keymap.set("n", "<leader>fp", function()
+	local url = "https://github.com/will-lynas"
+	os.execute('open "' .. url .. '"')
+end, { desc = "Open github profile" })
