@@ -171,3 +171,15 @@ vim.keymap.set("n", "<leader>fa", function()
 		os.execute('open "' .. url .. '"')
 	end
 end, { desc = "Open last GH action in browser" })
+
+vim.keymap.set("n", "<leader>fo", function()
+	local f = io.open("browser_path", "r")
+	if f then
+		local url = f:read("*line")
+		f:close()
+		os.execute('open "' .. url .. '"')
+		vim.notify("Opening " .. url, vim.log.levels.INFO)
+	else
+		vim.notify("'browser_path' file not found", vim.log.levels.ERROR)
+	end
+end, { desc = "Open link from browser_path" })
