@@ -1,5 +1,6 @@
 return {
 	"lervag/vimtex",
+	lazy = false,
 	config = function()
 		-- TODO: refactor to lua
 		-- TODO: local scope these settings
