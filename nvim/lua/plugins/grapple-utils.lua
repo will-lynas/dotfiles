@@ -15,5 +15,9 @@ return {
 		if grapple_utils["move_down"] then
 			vim.keymap.set("n", "<leader>ol", grapple_utils.move_down, { desc = "Move Right" })
 		end
+
+		if grapple_utils["move_to_start"] then
+			vim.keymap.set("n", "<leader>ob", grapple_utils.move_to_start, { desc = "Move To Start" })
+		end
 	end,
 }
