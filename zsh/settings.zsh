@@ -6,7 +6,7 @@ fi
 
 export EDITOR=nvim
 
-export PATH="$PATH:$INSTALL_DIR/bin/:$HOME/go/bin/"
+export PATH="$PATH:$INSTALL_DIR/bin/:$HOME/go/bin/:$HOME/.elan/bin"
 typeset -U path
 
 export HISTFILE=~/.zsh_history
