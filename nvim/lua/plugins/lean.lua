@@ -7,8 +7,10 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 
-	opts = {
-		lsp = {},
-		mappings = true,
-	},
+	setup = function()
+		require("lean").setup({
+			lsp = {},
+			mappings = true,
+		})
+	end,
 }
