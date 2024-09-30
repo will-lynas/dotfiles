@@ -7,7 +7,7 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 
-	setup = function()
+	config = function()
 		require("lean").setup({
 			lsp = {},
 			mappings = true,
