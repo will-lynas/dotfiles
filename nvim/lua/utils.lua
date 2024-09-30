@@ -71,4 +71,10 @@ function M.git_root_of_current_file(notify)
 	return M.get_git_root({ filepath = filepath, notify = notify ~= false })
 end
 
+function M.strip_trailing_whitespace()
+	local save_cursor = vim.api.nvim_win_get_cursor(0)
+	vim.cmd([[ %s/\s\+$//e ]])
+	vim.api.nvim_win_set_cursor(0, save_cursor)
+end
+
 return M
