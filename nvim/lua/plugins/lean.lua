@@ -13,9 +13,6 @@ return {
 		require("lean").setup({
 			lsp = {},
 			mappings = true,
-			infoview = {
-				autoopen = false,
-			},
 		})
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
