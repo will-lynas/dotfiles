@@ -1,7 +1,6 @@
 cmd + shift - r : skhd --reload
 
-# Unbind this
-cmd - tab : true
+cmd - tab : yabai -m space --focus recent
 
 cmd - 1 : yabai -m space --focus 1
 cmd - 2 : yabai -m space --focus 2
