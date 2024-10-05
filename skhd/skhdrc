@@ -1,4 +1,4 @@
-cmd + shift - r : skhd --reload
+cmd + ctrl - r : skhd --reload
 
 cmd - 1 : yabai -m space --focus 1
 cmd - 2 : yabai -m space --focus 2
@@ -14,9 +14,9 @@ cmd + shift - 4 : yabai -m window --space  4
 cmd + shift - 5 : yabai -m window --space  5
 cmd + shift - 6 : yabai -m window --space  6
 
-cmd + shift - b : yabai -m space --layout bsp
-cmd + shift - l : yabai -m space --layout float
+cmd + ctrl - b : yabai -m space --layout bsp
+cmd + ctrl - l : yabai -m space --layout float
 
-cmd + shift - c : yabai -m space --create
+cmd + ctrl - c : yabai -m space --create
 
-cmd + shift - f : yabai -m window --toggle zoom-fullscreen
+cmd + ctrl - f : yabai -m window --toggle zoom-fullscreen
