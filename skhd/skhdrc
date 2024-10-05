@@ -15,3 +15,6 @@ cmd + shift - 3 : yabai -m window --space  3
 cmd + shift - 4 : yabai -m window --space  4
 cmd + shift - 5 : yabai -m window --space  5
 cmd + shift - 6 : yabai -m window --space  6
+
+cmd + shift - b : yabai -m space --layout bsp
+cmd + shift - l : yabai -m space --layout float
