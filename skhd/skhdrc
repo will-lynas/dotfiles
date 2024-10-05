@@ -20,3 +20,5 @@ cmd + shift - b : yabai -m space --layout bsp
 cmd + shift - l : yabai -m space --layout float
 
 cmd + shift - c : yabai -m space --create
+
+cmd + shift - f : yabai -m window --toggle zoom-fullscreen
