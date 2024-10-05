@@ -1,7 +1,7 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-yabai -m config layout bsp
+yabai -m config layout float
 yabai -m config top_padding 5
 yabai -m config bottom_padding 5
 yabai -m config left_padding 5
