@@ -3,3 +3,4 @@ sudo yabai --load-sa
 
 yabai -m config layout float
 yabai -m config window_gap 5
+yabai -m config focus_follows_mouse autofocus
