@@ -11,7 +11,9 @@ return {
 
 	config = function()
 		require("lean").setup({
-			lsp = {},
+			lsp = {
+				on_attach = require("lsp_utils").on_attach,
+			},
 			mappings = true,
 		})
 
