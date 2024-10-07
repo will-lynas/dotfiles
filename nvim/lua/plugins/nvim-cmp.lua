@@ -7,6 +7,7 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"neovim/nvim-lspconfig",
 		"L3MON4D3/LuaSnip",
+		"saadparwaiz1/cmp_luasnip",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -24,6 +25,7 @@ return {
 				{ name = "path" },
 				{ name = "nvim_lsp" },
 				{ name = "lazydev" },
+				{ name = "luasnip" },
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-n>"] = cmp.mapping.select_next_item(),
