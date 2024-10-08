@@ -23,6 +23,10 @@ return {
 				i(0),
 				t({ " with", "| inl h =>", "  sorry", "| inr h =>", "  sorry" }),
 			}),
+			s("ot", {
+				t("obtain ⟨ _, _ ⟩ := "),
+				i(0),
+			}),
 		})
 	end,
 }
