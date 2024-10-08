@@ -188,3 +188,7 @@ vim.keymap.set("n", "<leader>fp", function()
 	local url = "https://github.com/will-lynas"
 	os.execute('open "' .. url .. '"')
 end, { desc = "Open github profile" })
+
+vim.keymap.set("n", "<leader>fq", function()
+	vim.cmd("qa!")
+end, { desc = "Force Quit All" })
