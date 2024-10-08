@@ -25,7 +25,7 @@ require("lazy").setup("plugins", {
 	},
 	dev = {
 		path = require("paths").dev,
-		patterns = { "grapple-line.nvim", "grapple-utils.nvim", "avante.nvim", "obsidian.nvim" },
+		patterns = { "grapple-line.nvim", "grapple-utils.nvim", "avante.nvim", "obsidian.nvim", "lean-snippets.nvim" },
 		fallback = true,
 	},
 })
