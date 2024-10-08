@@ -15,19 +15,19 @@ return {
 		ls.add_snippets("lean", {
 			s("cs", {
 				t({ "constructor", "· " }),
-				i(0),
+				i(1),
 				t({ "", "  sorry", "·", "  sorry" }),
 			}),
 
 			s("cor", {
 				t("cases "),
-				i(0),
+				i(1),
 				t({ " with", "| inl h =>", "  sorry", "| inr h =>", "  sorry" }),
 			}),
 
 			s("ot", {
 				t("obtain ⟨ _, _ ⟩ := "),
-				i(0),
+				i(1),
 			}),
 		})
 	end,
