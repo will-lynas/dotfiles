@@ -18,6 +18,11 @@ return {
 				i(0),
 				t({ "", "  sorry", "·", "  sorry" }),
 			}),
+			s("cor", {
+				t("cases "),
+				i(0),
+				t({ " with", "| inl h =>", "  sorry", "| inr h =>", "  sorry" }),
+			}),
 		})
 	end,
 }
