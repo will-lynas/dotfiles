@@ -11,6 +11,7 @@ return {
 		local s = ls.snippet
 		local t = ls.text_node
 		local i = ls.insert_node
+		local r = require("luasnip.extras").rep
 
 		ls.add_snippets("lean", {
 			s("cs", {
@@ -28,6 +29,14 @@ return {
 			s("ot", {
 				t("obtain ⟨ _, _ ⟩ := "),
 				i(1),
+			}),
+
+			s("nd", {
+				t("induction "),
+				i(1),
+				t({ " with", "| zero =>", "  sorry", "| succ " }),
+				r(1),
+				t({ " ih =>", "  sorry" }),
 			}),
 		})
 	end,
