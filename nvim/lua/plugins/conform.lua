@@ -19,12 +19,6 @@ return {
 			format_on_save = true,
 		})
 
-		conform.formatters.rustfmt = {
-			command = "rustup",
-			args = { "run", "nightly", "rustfmt", "--emit=stdout", "--edition=2021" },
-			stdin = true,
-		}
-
 		vim.keymap.set("n", "<leader>fc", function()
 			vim.cmd("ConformInfo")
 		end, { desc = "Conform Info" })
