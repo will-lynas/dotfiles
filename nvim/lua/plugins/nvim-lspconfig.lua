@@ -13,7 +13,6 @@ return {
 
 		local servers = {
 			rust_analyzer = {
-				cmd = { "rustup", "run", "stable", "rust-analyzer" },
 				settings = {
 					["rust-analyzer"] = {
 						check = {
