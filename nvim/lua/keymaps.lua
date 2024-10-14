@@ -192,3 +192,6 @@ end, { desc = "Open github profile" })
 vim.keymap.set("n", "<leader>fq", function()
 	vim.cmd("qa!")
 end, { desc = "Force Quit All" })
+
+vim.keymap.set("n", "<leader>so", ":%y+<CR>", { desc = "Yank buffer to system clipboard" })
+vim.keymap.set("n", "<leader>sv", ':%d<CR>"*P', { desc = "Replace buffer with system clipboard" })
