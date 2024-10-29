@@ -3,6 +3,7 @@ export ZSH_DIR="$INSTALL_DIR/zsh"
 export PLUGIN_HOME="$HOME/.zsh_plugins"
 export P10K_HOME="$PLUGIN_HOME/powerlevel10k"
 export ZSH_VI_MODE_HOME="$PLUGIN_HOME/zsh-vi-mode"
+export ZSH_SYNTAX_HIGHLIGHTING_HOME="$PLUGIN_HOME/zsh-syntax-highlighting"
 
 mkdir -p "$PLUGIN_HOME"
 
@@ -12,6 +13,11 @@ fi
 
 if [[ ! -d "$ZSH_VI_MODE_HOME" ]]; then
     git clone https://github.com/jeffreytse/zsh-vi-mode.git $ZSH_VI_MODE_HOME
+fi
+
+if [[ ! -d "$ZSH_SYNTAX_HIGHLIGHTING_HOME" ]]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+        $ZSH_SYNTAX_HIGHLIGHTING_HOME
 fi
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -25,6 +31,8 @@ export ZVM_VI_EDITOR="nvim"
 export ZVM_VI_ESCAPE_BINDKEY="^["
 export ZVM_VI_INSERT_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+
+source $ZSH_SYNTAX_HIGHLIGHTING_HOME/zsh-syntax-highlighting.zsh
 
 source $ZSH_DIR/zplug.zsh
 source $ZSH_DIR/fzf.zsh

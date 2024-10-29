@@ -7,7 +7,6 @@ fi
 
 source $ZPLUG_HOME/init.zsh
 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "plugins/git", from:oh-my-zsh
 
 if ! zplug check --verbose; then
