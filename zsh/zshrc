@@ -110,7 +110,21 @@ export HOMEBREW_NO_ENV_HINTS=1
 
 # -----------------------------------------------------------------------------------------
 
-source $ZSH_DIR/aliases.zsh
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+
+alias vim="nvim"
+alias c="clear"
+alias e="exit"
+alias zc="source ~/.zshrc"
+alias ta="tmux a"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# -----------------------------------------------------------------------------------------
+
 source $ZSH_DIR/tpm.zsh
 source $ZSH_DIR/rust.zsh
 source $ZSH_DIR/secrets.zsh
