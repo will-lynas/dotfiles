@@ -2,11 +2,14 @@ autoload -Uz compinit && compinit
 
 export INSTALL_DIR="$HOME/dotfiles"
 export ZSH_DIR="$INSTALL_DIR/zsh"
+
 export PLUGIN_HOME="$HOME/.zsh_plugins"
 export P10K_HOME="$PLUGIN_HOME/powerlevel10k"
 export ZSH_VI_MODE_HOME="$PLUGIN_HOME/zsh-vi-mode"
 export ZSH_SYNTAX_HIGHLIGHTING_HOME="$PLUGIN_HOME/zsh-syntax-highlighting"
 export OH_MY_ZSH_HOME="$PLUGIN_HOME/ohmyzsh"
+
+# -----------------------------------------------------------------------------------------
 
 mkdir -p "$PLUGIN_HOME"
 
@@ -27,11 +30,15 @@ if [[ ! -d "$OH_MY_ZSH_HOME" ]]; then
     git clone https://github.com/ohmyzsh/ohmyzsh.git $OH_MY_ZSH_HOME
 fi
 
+# -----------------------------------------------------------------------------------------
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 source $P10K_HOME/powerlevel10k.zsh-theme
 source ~/.p10k.zsh
+
+# -----------------------------------------------------------------------------------------
 
 source $ZSH_VI_MODE_HOME/zsh-vi-mode.plugin.zsh
 export ZVM_VI_EDITOR="nvim"
@@ -39,9 +46,15 @@ export ZVM_VI_ESCAPE_BINDKEY="^["
 export ZVM_VI_INSERT_ESCAPE_BINDKEY=$ZVM_VI_ESCAPE_BINDKEY
 export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
 
+# -----------------------------------------------------------------------------------------
+
 source $ZSH_SYNTAX_HIGHLIGHTING_HOME/zsh-syntax-highlighting.zsh
 
+# -----------------------------------------------------------------------------------------
+
 source $OH_MY_ZSH_HOME/plugins/git/git.plugin.zsh
+
+# -----------------------------------------------------------------------------------------
 
 source $ZSH_DIR/fzf.zsh
 source $ZSH_DIR/pyenv.zsh
