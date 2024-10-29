@@ -1,10 +1,5 @@
 export ZPLUG_HOME="$HOME/.zplug"
 
-if ! command -v git &> /dev/null; then
-    echo "git is not installed. Exiting zplug script..."
-    return 1
-fi
-
 if [ ! -d "$ZPLUG_HOME" ] || [ -z "$(ls -A $ZPLUG_HOME 2>/dev/null)" ]; then
     echo "zplug is not installed. Cloning..."
     git clone https://github.com/zplug/zplug $ZPLUG_HOME
