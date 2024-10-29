@@ -128,6 +128,14 @@ fi
 
 # -----------------------------------------------------------------------------------------
 
+if command -v zoxide &> /dev/null; then
+
+eval "$(zoxide init zsh)"
+
+fi
+
+# -----------------------------------------------------------------------------------------
+
 export EDITOR=nvim
 
 export PATH="$PATH:$INSTALL_DIR/bin/:$HOME/go/bin/:$HOME/.elan/bin:$HOME/.local/bin"
@@ -159,7 +167,3 @@ alias ta="tmux a"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-
-# -----------------------------------------------------------------------------------------
-
-source $ZSH_DIR/zoxide.zsh
