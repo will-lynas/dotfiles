@@ -79,7 +79,12 @@ fi
 
 # -----------------------------------------------------------------------------------------
 
-source $ZSH_DIR/pyenv.zsh
+if command -v pyenv &> /dev/null; then
+    eval "$(pyenv init -)"
+fi
+
+# -----------------------------------------------------------------------------------------
+
 source $ZSH_DIR/settings.zsh
 source $ZSH_DIR/aliases.zsh
 source $ZSH_DIR/tpm.zsh
