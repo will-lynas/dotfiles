@@ -104,6 +104,16 @@ fi
 
 # -----------------------------------------------------------------------------------------
 
+export TPM_HOME_PARENT="$HOME/.tmux/plugins"
+export TPM_HOME="$TPM_HOME_PARENT/tpm"
+mkdir -p $TPM_HOME_PARENT
+
+if [ ! -d "$TPM_HOME" ] || [ -z "$(ls -A $TPM_HOME 2>/dev/null)" ]; then
+    git clone https://github.com/tmux-plugins/tpm $TPM_HOME
+fi
+
+# -----------------------------------------------------------------------------------------
+
 if [ -n "$TMUX" ]; then
   export TERM="xterm-256color"
 else
@@ -144,6 +154,5 @@ alias ....="cd ../../.."
 
 # -----------------------------------------------------------------------------------------
 
-source $ZSH_DIR/tpm.zsh
 source $ZSH_DIR/rust.zsh
 source $ZSH_DIR/zoxide.zsh
