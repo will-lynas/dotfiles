@@ -114,11 +114,19 @@ fi
 
 # -----------------------------------------------------------------------------------------
 
+export CARGO_ENV="$HOME/.cargo/env"
+
+if [ -f "$CARGO_ENV" ]; then
+  source "$CARGO_ENV"
+fi
+
 if [ -n "$TMUX" ]; then
   export TERM="xterm-256color"
 else
   export TERM="xterm-kitty"
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export EDITOR=nvim
 
@@ -154,5 +162,4 @@ alias ....="cd ../../.."
 
 # -----------------------------------------------------------------------------------------
 
-source $ZSH_DIR/rust.zsh
 source $ZSH_DIR/zoxide.zsh
