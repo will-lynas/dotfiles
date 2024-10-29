@@ -88,6 +88,15 @@ fi
 
 # -----------------------------------------------------------------------------------------
 
+SECRET_ENV_VAR_NAME="ANTHROPIC_API_KEY"
+SECRET_FILE_PATH="$INSTALL_DIR/secrets/$ENV_VAR_NAME"
+
+if [[ -f $FILE_PATH ]]; then
+    export $SECRET_ENV_VAR_NAME=$(<"$SECRET_FILE_PATH")
+fi
+
+# -----------------------------------------------------------------------------------------
+
 if [ -n "$TMUX" ]; then
   export TERM="xterm-256color"
 else
@@ -130,5 +139,4 @@ alias ....="cd ../../.."
 
 source $ZSH_DIR/tpm.zsh
 source $ZSH_DIR/rust.zsh
-source $ZSH_DIR/secrets.zsh
 source $ZSH_DIR/zoxide.zsh
