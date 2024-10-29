@@ -11,6 +11,13 @@ export OH_MY_ZSH_HOME="$PLUGIN_HOME/ohmyzsh"
 
 # -----------------------------------------------------------------------------------------
 
+if ! command -v git &> /dev/null; then
+    echo "git is not installed. Exiting ..."
+    return 1
+fi
+
+# -----------------------------------------------------------------------------------------
+
 mkdir -p "$PLUGIN_HOME"
 
 if [[ ! -d "$P10K_HOME" ]]; then
