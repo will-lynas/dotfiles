@@ -71,7 +71,6 @@ export FZF_DEFAULT_OPTS=\
 '--marker=">" '\
 
 # This fixes fzf Ctrl-R being broken with zsh-vi-mode in insert mode
-# This fixes that
 function source_fzf(){
     source <(fzf --zsh)
 }
