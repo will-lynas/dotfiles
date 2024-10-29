@@ -56,24 +56,26 @@ source $OH_MY_ZSH_HOME/plugins/git/git.plugin.zsh
 
 # -----------------------------------------------------------------------------------------
 
-export FZF_DEFAULT_OPTS=\
-'--multi '\
-'--height 40% '\
-'--reverse '\
-'--preview "batcat --style=numbers --color=always --line-range :500 {} 2>/dev/null" '\
-'--border=none '\
-'--info=inline-right '\
-'--no-scrollbar '\
-'--prompt="> " '\
-'--pointer=">" '\
-'--marker=">" '\
+if command -v fzf &> /dev/null; then
+    export FZF_DEFAULT_OPTS=\
+    '--multi '\
+    '--height 40% '\
+    '--reverse '\
+    '--preview "batcat --style=numbers --color=always --line-range :500 {} 2>/dev/null" '\
+    '--border=none '\
+    '--info=inline-right '\
+    '--no-scrollbar '\
+    '--prompt="> " '\
+    '--pointer=">" '\
+    '--marker=">" '\
 
-# This fixes fzf Ctrl-R being broken with zsh-vi-mode in insert mode
-# This fixes that
-function source_fzf(){
-	source <(fzf --zsh)
-}
-zvm_after_init_commands+=(source_fzf)
+    # This fixes fzf Ctrl-R being broken with zsh-vi-mode in insert mode
+    # This fixes that
+    function source_fzf(){
+        source <(fzf --zsh)
+    }
+    zvm_after_init_commands+=(source_fzf)
+fi
 
 # -----------------------------------------------------------------------------------------
 
