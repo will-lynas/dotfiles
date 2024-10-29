@@ -18,6 +18,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source $P10K_HOME/powerlevel10k.zsh-theme
+# If this isn't symlinked, the config wizard will start
 source ~/.p10k.zsh
 
 # ----------------------------------------------------------------------------
