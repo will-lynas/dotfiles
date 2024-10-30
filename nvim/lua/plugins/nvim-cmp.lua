@@ -36,7 +36,8 @@ return {
 			}),
 			window = {
 				completion = cmp.config.window.bordered(),
-				documentation = cmp.config.window.bordered(),
+				-- Hack to stop the documentation window covering up the other window
+				-- documentation = cmp.config.window.bordered(),
 			},
 		})
 
