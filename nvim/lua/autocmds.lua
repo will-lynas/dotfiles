@@ -13,3 +13,14 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 	end,
 })
+
+vim.api.nvim_create_augroup("CheckTimeAutoCmds", { clear = true })
+
+vim.api.nvim_create_autocmd(
+	{ "CursorHold", "BufEnter", "BufWinEnter", "WinEnter", "FocusGained", "FileChangedShellPost" },
+	{
+		group = "CheckTimeAutoCmds",
+		pattern = "*",
+		command = "checktime",
+	}
+)
