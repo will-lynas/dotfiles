@@ -9,7 +9,7 @@ return {
 		local neogit = require("neogit")
 		neogit.setup({
 			disable_hint = true,
-			graph_style = "unicode",
+			graph_style = "kitty",
 			auto_show_console = false,
 			remember_settings = false,
 			console_timeout = 10000,
