@@ -91,6 +91,7 @@ return {
 		map("<leader>pS", grep_all, prompts.grep_all)
 		map("<leader>pd", diagnostics, "Diagnostics")
 		map("<leader>pg", builtin.git_files, "Git Files")
+		map("<leader>pl", builtin.highlights, "Highlights")
 		map("<leader>pb", builtin.buffers, "Buffers")
 		map("<leader>ph", builtin.help_tags, "Help Tags")
 		map("<leader>pk", builtin.keymaps, "Keymaps")
