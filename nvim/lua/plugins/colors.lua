@@ -6,6 +6,7 @@ return {
 		"rebelot/kanagawa.nvim",
 		"navarasu/onedark.nvim",
 		{ "catppuccin/nvim", name = "catppuccin" },
+		"Mofiqul/vscode.nvim",
 	},
 	lazy = false,
 	priority = 1000,
