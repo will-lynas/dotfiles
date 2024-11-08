@@ -4,6 +4,7 @@ return {
 		{ "rose-pine/neovim", name = "rose-pine" },
 		"Mofiqul/dracula.nvim",
 		"rebelot/kanagawa.nvim",
+		"navarasu/onedark.nvim",
 	},
 	lazy = false,
 	priority = 1000,
