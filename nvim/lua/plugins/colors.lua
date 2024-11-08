@@ -13,6 +13,10 @@ return {
 			style = "moon",
 		})
 
+		require("onedark").setup({
+			style = "deep",
+		})
+
 		pcall(require, "current-theme")
 	end,
 }
