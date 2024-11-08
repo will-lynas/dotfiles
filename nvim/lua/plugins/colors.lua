@@ -18,6 +18,9 @@ return {
 
 		require("onedark").setup({
 			style = "deep",
+			lualine = {
+				transparent = true,
+			},
 		})
 
 		pcall(require, "current-theme")
