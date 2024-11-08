@@ -101,5 +101,6 @@ return {
 		map("<leader>pc", find_in_git_root, "Find in Git Root")
 		map("<leader>pe", grep_in_git_root, "Grep in Git Root")
 		map("<leader>pi", builtin.git_bcommits, "Buffer Commits")
+		map("<leader>po", builtin.colorscheme, "Colorscheme")
 	end,
 }
