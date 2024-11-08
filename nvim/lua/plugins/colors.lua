@@ -1,6 +1,10 @@
 return {
 	"folke/tokyonight.nvim",
-	dependencies = { "Mofiqul/dracula.nvim", "rebelot/kanagawa.nvim" },
+	dependencies = {
+		{ "rose-pine/neovim", name = "rose-pine" },
+		"Mofiqul/dracula.nvim",
+		"rebelot/kanagawa.nvim",
+	},
 	lazy = false,
 	priority = 1000,
 	config = function()
