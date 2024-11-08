@@ -10,6 +10,6 @@ return {
 
 		require("dracula").setup()
 
-		require("current-theme")
+		pcall(require, "current-theme")
 	end,
 }
