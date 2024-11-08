@@ -1,4 +1,3 @@
--- This is a mess
 return {
 	"folke/tokyonight.nvim",
 	dependencies = { "Mofiqul/dracula.nvim" },
