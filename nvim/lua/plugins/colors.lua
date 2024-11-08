@@ -8,8 +8,6 @@ return {
 			style = "moon",
 		})
 
-		require("dracula").setup()
-
 		pcall(require, "current-theme")
 	end,
 }
