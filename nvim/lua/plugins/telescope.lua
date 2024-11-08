@@ -1,12 +1,11 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim", "andrew-george/telescope-themes" },
 	branch = "0.1.x",
 	config = function()
 		local telescope = require("telescope")
 		local builtin = require("telescope.builtin")
 		local actions = require("telescope.actions")
-		local action_state = require("telescope.actions.state")
 		local utils = require("utils")
 
 		telescope.setup({
@@ -19,6 +18,11 @@ return {
 			},
 			defaults = {
 				layout_strategy = "vertical",
+			},
+			extensions = {
+				themes = {
+					ignore = {},
+				},
 			},
 		})
 
@@ -101,6 +105,8 @@ return {
 		map("<leader>pc", find_in_git_root, "Find in Git Root")
 		map("<leader>pe", grep_in_git_root, "Grep in Git Root")
 		map("<leader>pi", builtin.git_bcommits, "Buffer Commits")
-		map("<leader>po", builtin.colorscheme, "Colorscheme")
+		map("<leader>po", function()
+			vim.cmd("Telescope themes")
+		end, "Themes")
 	end,
 }

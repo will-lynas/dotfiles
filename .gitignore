@@ -1,2 +1,3 @@
 tmux/plugins/
 secrets/
+nvim/lua/current-theme.lua

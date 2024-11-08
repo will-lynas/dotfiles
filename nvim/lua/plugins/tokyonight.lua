@@ -6,6 +6,7 @@ return {
 		require("tokyonight").setup({
 			style = "moon",
 		})
-		vim.cmd([[colorscheme tokyonight]])
+		-- This is probably not the best place for this
+		require("current-theme")
 	end,
 }
