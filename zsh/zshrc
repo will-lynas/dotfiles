@@ -96,9 +96,9 @@ fi
 # -----------------------------------------------------------------------------------------
 
 SECRET_ENV_VAR_NAME="ANTHROPIC_API_KEY"
-SECRET_FILE_PATH="$INSTALL_DIR/secrets/$ENV_VAR_NAME"
+SECRET_FILE_PATH="$INSTALL_DIR/secrets/$SECRET_ENV_VAR_NAME"
 
-if [[ -f $FILE_PATH ]]; then
+if [[ -f $SECRET_FILE_PATH ]]; then
     export $SECRET_ENV_VAR_NAME=$(<"$SECRET_FILE_PATH")
 fi
 
