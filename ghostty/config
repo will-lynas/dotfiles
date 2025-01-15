@@ -1,0 +1,5 @@
+macos-option-as-alt = true
+font-family = DejaVuSansM Nerd Font Mono
+font-size = 15
+keybind = cmd+l=text:\x01L
+keybind = cmd+r=reload_config
