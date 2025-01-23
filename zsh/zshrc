@@ -122,6 +122,8 @@ fi
 
 if [ -n "$TMUX" ]; then
   export TERM="xterm-256color"
+elif [ "$TERM_PROGRAM" = "vscode" ]; then
+  export TERM="xterm-256color"
 else
   export TERM="xterm-kitty"
   # export TERM="xterm-ghostty"
