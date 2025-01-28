@@ -28,7 +28,7 @@ return {
 				lualine_a = { short_mode },
 				lualine_b = { maximize_status },
 				lualine_c = {},
-				lualine_x = {},
+				lualine_x = { "location" },
 				lualine_y = { "progress" },
 				lualine_z = { { "branch", icons_enabled = false } },
 			},
