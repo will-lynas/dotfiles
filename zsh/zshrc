@@ -139,6 +139,10 @@ fi
 
 # -----------------------------------------------------------------------------------------
 
+[[ ! -r '/Users/will-lynas/.opam/opam-init/init.zsh' ]] || source '/Users/will-lynas/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+
+# -----------------------------------------------------------------------------------------
+
 export EDITOR=nvim
 
 export PATH="$PATH:$INSTALL_DIR/bin/:$HOME/go/bin/:$HOME/.elan/bin:$HOME/.local/bin"
