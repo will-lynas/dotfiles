@@ -20,4 +20,10 @@
   "editor.fontLigatures": true,
   "editor.fontFamily": "JetBrains Mono",
   "window.commandCenter": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
