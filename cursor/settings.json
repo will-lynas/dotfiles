@@ -17,8 +17,8 @@
   "workbench.editor.customLabels.patterns": {
     "**/mod.rs": "${dirname}/mod.rs"
   },
-  "editor.fontLigatures": true,
-  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": false,
+  "editor.fontFamily": "DejaVuSansM Nerd Font Mono",
   "window.commandCenter": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
