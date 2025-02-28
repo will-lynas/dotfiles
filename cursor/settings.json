@@ -28,5 +28,7 @@
   },
   "markdown-preview-enhanced.previewTheme": "github-dark.css",
   "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "extensions.ignoreRecommendations": true,
+  "cursor-retrieval.canAttemptGithubLogin": false
 }
