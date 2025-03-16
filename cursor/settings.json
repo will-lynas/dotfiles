@@ -30,5 +30,6 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "extensions.ignoreRecommendations": true,
-  "cursor-retrieval.canAttemptGithubLogin": false
+  "cursor-retrieval.canAttemptGithubLogin": false,
+  "editor.lineNumbers": "relative"
 }
