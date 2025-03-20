@@ -16,6 +16,8 @@
   "rust-analyzer.check.command": "clippy",
   "workbench.editor.customLabels.patterns": {
     "**/mod.rs": "${dirname}/mod.rs"
+    "**/page.tsx": "${dirname}/page.tsx"
+    "**/layout.tsx": "${dirname}/layout.tsx"
   },
   "editor.fontLigatures": false,
   "editor.fontFamily": "DejaVuSansM Nerd Font Mono",
