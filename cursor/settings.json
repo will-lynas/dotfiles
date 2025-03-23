@@ -6,7 +6,7 @@
   "rust-analyzer.workspace.discoverConfig": null,
   "editor.formatOnSave": true,
   "git.confirmSync": false,
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Andromeda",
   "breadcrumbs.enabled": false,
   "rust-analyzer.lens.implementations.enable": false,
   "editor.stickyScroll.enabled": false,
