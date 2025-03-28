@@ -42,5 +42,16 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "notebook.diff.ignoreMetadata": true,
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": true
+  },
+  "liveServer.settings.donotVerifyTags": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
