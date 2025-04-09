@@ -6,7 +6,6 @@
   "rust-analyzer.workspace.discoverConfig": null,
   "editor.formatOnSave": true,
   "git.confirmSync": false,
-  "workbench.colorTheme": "Catppuccin Frappé",
   "breadcrumbs.enabled": false,
   "rust-analyzer.lens.implementations.enable": false,
   "editor.stickyScroll.enabled": false,
@@ -53,5 +52,6 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.colorTheme": "One Dark Pro Darker"
 }
