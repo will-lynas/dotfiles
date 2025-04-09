@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# vim: filetype=bash
+
+DIRS=$(find ~/dev -maxdepth 1 -type d -not -path "~/dev" -exec basename {} \;)
+
+SELECTED=$(echo "$DIRS" |
+    fzf --tmux center,80%,60% --prompt="Open in cursor > " --border)
+
+if [ -n "$SELECTED" ]; then
+    cursor ~/dev/"$SELECTED"
+fi
