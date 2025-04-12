@@ -7,6 +7,6 @@ return {
 	opts = {
 		show_names = true,
 		overflow = "ellipsis",
-		always_show_parent = { "mod.rs", "tests.rs", "init.lua" },
+		always_show_parent = { "mod.rs", "tests.rs", "init.lua", "page.tsx", "layout.tsx" },
 	},
 }
