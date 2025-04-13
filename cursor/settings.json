@@ -55,5 +55,10 @@
   },
   "workbench.colorTheme": "One Dark Pro Darker",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "explorer.sortOrder": "filesFirst"
+  "explorer.sortOrder": "filesFirst",
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#FF00FF"
+  },
+  "workbench.tree.indent": 12
 }
