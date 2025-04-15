@@ -16,7 +16,8 @@
   "workbench.editor.customLabels.patterns": {
     "**/mod.rs": "${dirname}/mod.rs",
     "**/page.tsx": "${dirname}/page.tsx",
-    "**/layout.tsx": "${dirname}/layout.tsx"
+    "**/layout.tsx": "${dirname}/layout.tsx",
+    "**/route.ts": "${dirname}/route.ts"
   },
   "editor.fontLigatures": false,
   "editor.fontFamily": "DejaVuSansM Nerd Font Mono",
